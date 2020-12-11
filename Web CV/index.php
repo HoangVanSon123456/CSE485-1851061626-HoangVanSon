@@ -16,6 +16,7 @@
                 <li><a href="#resume" class="menu-btn">Resume</a></li>
                 <li><a href="#skills" class="menu-btn">Skills</a></li>
                 <li><a href="#contact" class="menu-btn">Contact</a></li>
+                <li><a href="#contact" class="menu-btn">Sign Up</a></li>
             </ul>
         </div>
     </nav>
