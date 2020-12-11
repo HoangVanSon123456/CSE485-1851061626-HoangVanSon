@@ -1,0 +1,96 @@
+/*-------------*/
+/*Basic Setup*/
+/*------------*/
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+* .row
+{
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+} 
+/*navbar*/
+.navbar
+{
+  position: fixed;
+  width: 100%;
+  /*background-color: red;*/
+  padding: 30px 0;
+  /* z-index: 999;*/
+  font-family: sans-serif;
+  /* transition: all 0.3s ease;   */
+}
+.navbar .row
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a
+{
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.navbar .logo a span
+{
+  color: orange;
+  transition: color 0.3s ease;  
+}
+.navbar .menu li
+{
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a
+{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease ; 
+}
+.navbar .menu li a:hover
+{
+  color: orange;
+} 
+/*home section*/
+.home
+{
+  display: flex;
+  background:url("img/wp2691185.jpg") no-repeat center;
+  height: 100vh;
+  color: #ffffff;
+  min-height: 500px;
+} 
+.home .row
+{
+  margin: auto 0 auto 40px;
+}
+.home .home-content .text-1
+{
+  font-size: 27px;
+}
+.home .home-content .text-2
+{
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .home-content .text-3
+{
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .home-content .text-3 span
+{
+  color: crimson;
+  font-weight: 500;
+}
+
+
