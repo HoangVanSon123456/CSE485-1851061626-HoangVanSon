@@ -32,13 +32,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <!-- Vendor CSS Files -->
+    <!-- Vendor CSS Files and Template Main CSS File-->
     <?php include "linkcss.php" ?>
 </head>
-<body id="page-top">
-    <!-- ======= Contact Section ======= -->
-    <?php include "header.php" ?>
-    <main id="main">
+<body id ="page-top">
+  <!-- ======= Contact Section ======= -->
+  <?php include "header.php" ?>
+  <br> <br>
+  <main id="main">
     <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(resources/img/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
@@ -122,7 +123,30 @@
         </div>
       </div>
     </section><!-- End Contact Section -->
-    </main>
+  </main>
+  <!-- ======= Footer ======= -->
+  <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-box">
+                        <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+                        <div class="credits">
+                            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+            -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End  Footer -->
+    <!-- Vendor JS Files and Template Main JS File  -->
     <?php include "linkjs.php"?>
 <!-- <script>
   $("#submit").click(function(){

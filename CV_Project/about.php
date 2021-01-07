@@ -4,44 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About me</title>
+  <!-- Vendor CSS Files and Template Main CSS File-->
   <?php include "linkcss.php" ?>
 </head>
-<body id="page-top">
-    
-    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-        <div class="container">
-          <a class="navbar-brand js-scroll" href="home.php">Curriculum Vitae</a>
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link js-scroll active" href="home.php">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="about.php">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="resume.html">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="teams.html">Teams</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="works.html">Work</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-</nav>
-<br> <br>
-<main id ='main'>
+<body id ="page-top">
+  <?php include "header.php" ?>
+  <br> <br>
+  <main id="main">
       <section id="about" class="about-mf sect-pt4 route">
         <div class="container">
           <div class="row">
@@ -225,7 +194,7 @@
         </div>
       </div>
     </section><!-- End Services Section -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(resources/img/counters-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -276,7 +245,7 @@
         </div>
       </div>
     </div><!-- End Counter Section -->
-      </main>
+  </main>
       <!-- ======= Footer ======= -->
   <footer>
     <div class="container">
@@ -301,6 +270,7 @@
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
-      <?php include "linkjs.php" ?>
+  <!-- Vendor JS Files -->
+  <?php include "linkjs.php" ?>
 </body>
 </html>

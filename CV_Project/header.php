@@ -15,13 +15,13 @@
                 <a class="nav-link js-scroll" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="resume.html">Resume</a>
+                <a class="nav-link js-scroll" href="resume.php">Resume</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="teams.html">Teams</a>
+                <a class="nav-link js-scroll" href="teams.php">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="works.html">Work</a>
+                <a class="nav-link js-scroll" href="works.php">Work</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link js-scroll" href="contact.php">Contact</a>
