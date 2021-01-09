@@ -15,10 +15,18 @@
         <div class="container">
             <div class="row">
             <div class="col-md-12">
+                <div class="title-box text-center">
+                    <h3 class="title-a">
+                        My team
+                    </h3>
+                    <p class="subtitle-a">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <div class="line-bf"></div>
                 <div id="testimonial-mf" class="owl-carousel owl-theme">
                 <div class="testimonial-box">
                     <div class="author-test">
-                    <img src="resources/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
+                    <a href="home.php"><img src="resources/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a"></a>
                     <span class="author">Xavi Alonso</span>
                     </div>
                     <div class="content-test">
@@ -31,7 +39,7 @@
                 </div>
                 <div class="testimonial-box">
                     <div class="author-test">
-                    <img src="resources/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
+                    <a href="team_details.php"><img src="resources/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a"></a>
                     <span class="author">Marta Socrate</span>
                     </div>
                     <div class="content-test">
@@ -41,6 +49,7 @@
                     </p>
                     <span class="comit"><i class="fa fa-quote-right"></i></span>
                     </div>
+                </div>
                 </div>
                 </div>
             </div>
@@ -70,6 +79,8 @@
         </div>
     </footer>
     <!-- End  Footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
     <!-- Vendor JS Files and Template Main JS File  -->
     <?php include "linkjs.php" ?>
 </body>

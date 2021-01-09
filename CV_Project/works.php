@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>Work</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Vendor CSS Files and Template Main CSS File-->
-    <?php include "linkcss.php" ?>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <?php include "linkcss.php" ?>    
 </head>
 <body id ="page-top">
     <?php include "header.php" ?>
@@ -46,7 +46,10 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <!-- ion-ios-plus-outline -->
+                                            <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -70,7 +73,9 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +99,9 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +125,9 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +151,9 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -166,7 +177,9 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                            <a href="portfolio-details.html"> <span class="ion-ios-plus-outline"></span></a>
+                                        <a href="portfolio-details.html"> <span class="fas fa-eye"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-edit"></span></a>
+                                            <a href="portfolio-details.html"> <span class="fas fa-trash-alt"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +284,12 @@
         </div>
     </footer>
     <!-- End  Footer -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+    <!-- Vendor JS Files and Template Main JS File  -->
+    
+    <?php include "linkjs.php" ?>
+    
+    
 </body>
-<!-- Vendor JS Files and Template Main JS File  -->
-<?php include "linkjs.php" ?>
 </html>
