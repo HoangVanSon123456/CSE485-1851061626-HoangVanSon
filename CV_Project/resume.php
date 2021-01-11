@@ -108,7 +108,7 @@
                         <div class="date-content">
                             <div class="date-outer">
                                 <span class="date">
-                                                <span class="month">2 Years</span>
+                                <span class="month">2 Years</span>
                                 <span class="year">2013</span>
                                 </span>
                             </div>
@@ -207,6 +207,7 @@
             </div>
         </div>
     </footer>
+    <div id="preloader"></div>
     <!-- End  Footer -->
     <!-- Vendor JS Files and Template Main JS File  -->
     <?php include "linkjs.php" ?>

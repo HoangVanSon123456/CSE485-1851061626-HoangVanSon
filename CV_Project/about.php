@@ -7,11 +7,11 @@
   <!-- Vendor CSS Files and Template Main CSS File-->
   <?php include "linkcss.php" ?>
 </head>
-<body id ="page-top">
+<body id ="page-top" style="background-image: url(resources/img/blue.jpg)">
   <?php include "header.php" ?>
   <br> <br>
   <main id="main">
-      <section id="about" class="about-mf sect-pt4 route">
+      <section id="about" class="about-mf sect-pt4 route" >
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
@@ -85,7 +85,7 @@
         </div>
       </section>
       <!-- ======= Services Section ======= -->
-    <section id="service" class="services-mf pt-5 route">
+    <section id="service" class="services-mf pt-5 route" style="background-image: url(resources/img/blue.jpg)">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
