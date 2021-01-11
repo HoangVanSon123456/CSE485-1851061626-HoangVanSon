@@ -1,3 +1,11 @@
+<?php
+session_start();
+//tiến hành kiểm tra là người dùng đã đăng nhập hay chưa
+//nếu chưa, chuyển hướng người dùng ra lại trang đăng nhập
+if (!isset($_SESSION['username'])) {
+	 header('Location: login.php');
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +17,7 @@
   </head>
   <body id ="page-top">
     <?php include "header.php" ?>
-      <div id="home" class="intro route bg-image" style="background-image: url(resources/img/1130.jpg)">
+      <div id="home" class="intro route bg-image" style="background-image: url(resources/img/background.jpg)">
         <div class="overlay-itro"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -21,6 +29,10 @@
         </div>
       </div>
       <!-- Vendor JS Files and Template Main JS File  -->
+      <div id="preloader"></div>
     <?php include "linkjs.php" ?>
+    <div class="loader text-success">
+      <span class="sr-only">Loading...</span>
+    </div>
   </body>
 </html>
