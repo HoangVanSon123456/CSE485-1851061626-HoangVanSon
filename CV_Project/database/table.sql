@@ -1,88 +1,88 @@
 -- create database CV
-create table Personal_information
+create table user
 (
-	ID_personal int primary key AUTO_INCREMENT,
-	Name varchar(40) not null,
-	Age int not null,
-	Address varchar(50) not null,
-	Email varchar (30) not null,
-	Username varchar(40) not null,
-	Pass varchar(20) not null,
-	Carrer varchar(60) not null,
-	Phone varchar(16) not null,
-	Description varchar(999) not null,
-	Get_in_touch varchar(255),
-	Image varchar(255)
+	userId int primary key AUTO_INCREMENT,
+	name varchar(40) not null,
+	age int not null,
+	address varchar(50) not null,
+	email varchar (30) not null,
+	username varchar(40) not null,
+	password varchar(20) not null,
+	carrer varchar(60) not null,
+	phone varchar(16) not null,
+	description varchar(999) not null,
+	get_in_touch varchar(255),
+	image varchar(255)
 );
-create table Skill
+create table skills
 (
-	ID_skill int primary key,
-	Name varchar(20) not null,
-	Parameter varchar(10) not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	skillId int primary key,
+	name varchar(20) not null,
+	parameter varchar(10) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
-create table Achievement
+create table achievement
 (
-	ID_achievement int primary key,
-	Name varchar(20) not null,
-	Parameter varchar(10) not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	achievementId int primary key,
+	name varchar(20) not null,
+	parameter varchar(10) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
-create table Service_list
+create table services
 (
-	ID_service int primary key,
-	Services_name varchar(30) not null,
-	Decription varchar(999) not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	serviceId int primary key,
+	name varchar(30) not null,
+	decription varchar(999) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
 
-create table Job_history
+create table history
 (
-	ID_job int primary key,
-	Name varchar(30) not null,
-	Content varchar(999) not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	historyId int primary key,
+	name varchar(30) not null,
+	content varchar(999) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
-create table Education_history
+create table education_history
 (
-	ID_education int primary key,
-	Name varchar(30) not null,
-	Content varchar(999) not null,
-	Year_start int not null,
-	Course_time varchar(10) not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	educationId int primary key,
+    name varchar(30) not null,
+	content varchar(999) not null,
+	year_start int not null,
+	course_time varchar(10) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
-create table Team
+create table teams
 (
-	ID_partner int primary key,
-	Name varchar(20) not null,
-	Decription varchar(999) not null,
-	ID_personal int not null,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	teamId int primary key,
+	name varchar(20) not null,
+	decription varchar(999) not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
-create table Product
+create table product
 (
-	ID_product int primary key,
-	Name varchar(50) not null,
-	Image varchar(255) ,
-	Product_date date not null,
-	ID_personal int,
-	foreign key (ID_personal) references Personal_information(ID_personal)
+	productId int primary key,
+	name varchar(50) not null,
+	image varchar(255) ,
+	product_date date not null,
+	userId int,
+	foreign key (userId) references user(userId)
 );
 create table Product_detail
 (
-	ID_detail int primary key,
-	Client varchar(50) not null,
-	Project_url varchar(40) not null,
-	Content varchar(999) not null,
-	Title varchar(50),
-	Category varchar(30) not null,
-	ID_product int ,
-	foreign key (ID_product) references Product(ID_product)
+	pro_detailID int primary key,
+	client varchar(50) not null,
+	project_url varchar(40) not null,
+	content varchar(999) not null,
+	title varchar(50),
+	category varchar(30) not null,
+    userId int,
+	foreign key (userId) references user(userId)
 );
 
