@@ -41,7 +41,7 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from user where id = 2";
+                          $sql1="SELECT * from account where userId = 2";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                       ?>
@@ -57,16 +57,16 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql2="SELECT * from skills where id = 1";
+                          $sql2="SELECT * from skills where skillId = 1";
                           $result2 = mysqli_query($conn,$sql2);
                           $users2 = mysqli_fetch_all($result2);
-                          $sql3="SELECT * from skills where id = 2";
+                          $sql3="SELECT * from skills where skillId = 2";
                           $result3 = mysqli_query($conn,$sql3);
                           $users3 = mysqli_fetch_all($result3);
-                          $sql4="SELECT * from skills where id = 3";
+                          $sql4="SELECT * from skills where skillId = 3";
                           $result4 = mysqli_query($conn,$sql4);
                           $users4 = mysqli_fetch_all($result4);
-                          $sql5="SELECT * from skills where id = 4";
+                          $sql5="SELECT * from skills where skillId = 4";
                           $result5 = mysqli_query($conn,$sql5);
                           $users5 = mysqli_fetch_all($result5); 
                       ?>
@@ -110,22 +110,22 @@
       </section>
       <!-- ======= Services Section ======= -->
       <?php
-      $sql6="SELECT * from service where id = 1";
+      $sql6="SELECT * from services where serviceId = 1";
       $result6 = mysqli_query($conn,$sql6);
       $users6 = mysqli_fetch_all($result6);
-      $sql7="SELECT * from service where id = 2";
+      $sql7="SELECT * from services where serviceId = 2";
       $result7 = mysqli_query($conn,$sql7);
       $users7 = mysqli_fetch_all($result7);
-      $sql8="SELECT * from service where id = 3";
+      $sql8="SELECT * from services where serviceId = 3";
       $result8 = mysqli_query($conn,$sql8);
       $users8 = mysqli_fetch_all($result8);
-      $sql9="SELECT * from service where id = 4";
+      $sql9="SELECT * from services where serviceId = 4";
       $result9 = mysqli_query($conn,$sql9);
       $users9 = mysqli_fetch_all($result9);
-      $sql10="SELECT * from service where id = 5";
+      $sql10="SELECT * from services where serviceId = 5";
       $result10 = mysqli_query($conn,$sql10);
       $users10 = mysqli_fetch_all($result10);
-      $sql11="SELECT * from service where id = 6";
+      $sql11="SELECT * from services where serviceId = 6";
       $result11 = mysqli_query($conn,$sql11);
       $users11 = mysqli_fetch_all($result11);
     ?> 
@@ -227,16 +227,16 @@
       </div>
     </section><!-- End Services Section -->
         <?php
-              $sql12="SELECT * from achievement where id = 1";
+              $sql12="SELECT * from achievement where achievementId = 1";
               $result12 = mysqli_query($conn,$sql12);
               $users12 = mysqli_fetch_all($result12);
-              $sql13="SELECT * from achievement where id = 2";
+              $sql13="SELECT * from achievement where achievementId = 2";
               $result13 = mysqli_query($conn,$sql13);
               $users13 = mysqli_fetch_all($result13);
-              $sql14="SELECT * from achievement where id = 3";
+              $sql14="SELECT * from achievement where achievementId = 3";
               $result14 = mysqli_query($conn,$sql14);
               $users14 = mysqli_fetch_all($result14);
-              $sql15="SELECT * from achievement where id = 4";
+              $sql15="SELECT * from achievement where achievementId = 4";
               $result15 = mysqli_query($conn,$sql15);
               $users15 = mysqli_fetch_all($result15);
         ?>
@@ -293,16 +293,16 @@
     </div><!-- End Counter Section -->
     <section id="resume"  class="services-mf pt-5 route">
             <?php
-              $sql16="SELECT * from history where id = 1";
+              $sql16="SELECT * from history where historyId = 1";
               $result16 = mysqli_query($conn,$sql16);
               $users16 = mysqli_fetch_all($result16);
-              $sql17="SELECT * from history where id = 2";
+              $sql17="SELECT * from history where historyId = 2";
               $result17 = mysqli_query($conn,$sql17);
               $users17 = mysqli_fetch_all($result17);
-              $sql18="SELECT * from history where id = 3";
+              $sql18="SELECT * from history where historyId = 3";
               $result18 = mysqli_query($conn,$sql18);
               $users18 = mysqli_fetch_all($result18);
-              $sql19="SELECT * from history where id = 4";
+              $sql19="SELECT * from history where historyId = 4";
               $result19 = mysqli_query($conn,$sql19);
               $users19 = mysqli_fetch_all($result19);
             ?> 
@@ -379,16 +379,16 @@
         <!--TimeLine-->
         <div class="container">
             <?php
-              $sql20="SELECT * from education_history where id = 1";
+              $sql20="SELECT * from education_history where educationId = 1";
               $result20 = mysqli_query($conn,$sql20);
               $users20 = mysqli_fetch_all($result20);
-              $sql21="SELECT * from education_history where id = 2";
+              $sql21="SELECT * from education_history where educationId = 2";
               $result21 = mysqli_query($conn,$sql21);
               $users21 = mysqli_fetch_all($result21);
-              $sql22="SELECT * from education_history where id = 3";
+              $sql22="SELECT * from education_history where educationId = 3";
               $result22 = mysqli_query($conn,$sql22);
               $users22 = mysqli_fetch_all($result22);
-              $sql23="SELECT * from education_history where id = 4";
+              $sql23="SELECT * from education_history where educationId = 4";
               $result23 = mysqli_query($conn,$sql23);
               $users23 = mysqli_fetch_all($result23);
             ?> 
@@ -497,10 +497,10 @@
         <div class="overlay-mf"></div>
         <div class="container">
             <?php
-              $sql24="SELECT * from user where id = 1";
+              $sql24="SELECT * from teams where teamId = 1";
               $result24 = mysqli_query($conn,$sql24);
               $users24 = mysqli_fetch_all($result24);
-              $sql25="SELECT * from user where id = 2";
+              $sql25="SELECT * from teams where teamId = 2";
               $result25 = mysqli_query($conn,$sql25);
               $users25 = mysqli_fetch_all($result25);
             ?>
@@ -522,7 +522,7 @@
                     </div>
                     <div class="content-test">
                     <p class="description lead">
-                      <?php foreach($users24 as $user24) echo $user24[9]?>
+                      <?php foreach($users24 as $user24) echo $user24[2]?>
                     </p>
                     <span class="comit"><i class="fa fa-quote-right"></i></span>
                     </div>
@@ -534,7 +534,7 @@
                     </div>
                     <div class="content-test">
                     <p class="description lead">
-                      <?php foreach($users25 as $user25) echo $user25[9]?>
+                      <?php foreach($users25 as $user25) echo $user25[2]?>
                     </p>
                     <span class="comit"><i class="fa fa-quote-right"></i></span>
                     </div>
@@ -712,6 +712,89 @@
             </div>
         </section>
         <!-- End Work Section -->
+        <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(resources/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Send Message Us
+                      </h5>
+                    </div>
+                    <?php include "contact.php"?>
+                    <div>
+                      <br>
+                      <form action="#contact" method="post" role="form">
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 text-center">
+                            <input type="submit" name="submit" class="btn btn-primary"value='Send Message'>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        Get in Touch
+                      </h5>
+                    </div>
+                    <br>
+                    <div class="more-info">
+                      <p class="lead">
+                      <?php foreach($users1 as $user1) echo $user1[10]?>
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="ion-ios-location"></span> <?php foreach($users1 as $user1) echo $user1[3]?></li>
+                        <li><span class="ion-ios-telephone"></span> <?php foreach($users1 as $user1) echo $user1[8]?></li>
+                        <li><span class="ion-email"></span> <?php foreach($users1 as $user1) echo $user1[4]?></li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
+                        <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                        <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
+                        <li><a href=""><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
     </main>
     <!-- ======= Footer ======= -->
     <?php

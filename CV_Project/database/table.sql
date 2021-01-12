@@ -1,5 +1,5 @@
 -- create database CV
-create table user
+create table account
 (
 	userId int primary key AUTO_INCREMENT,
 	name varchar(40) not null,
@@ -20,7 +20,7 @@ create table skills
 	name varchar(20) not null,
 	parameter varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table achievement
 (
@@ -28,7 +28,7 @@ create table achievement
 	name varchar(20) not null,
 	parameter varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table services
 (
@@ -36,7 +36,7 @@ create table services
 	name varchar(30) not null,
 	decription varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 
 create table history
@@ -45,7 +45,7 @@ create table history
 	name varchar(30) not null,
 	content varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table education_history
 (
@@ -55,7 +55,7 @@ create table education_history
 	year_start int not null,
 	course_time varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table teams
 (
@@ -63,7 +63,7 @@ create table teams
 	name varchar(20) not null,
 	decription varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table product
 (
@@ -72,7 +72,7 @@ create table product
 	image varchar(255) ,
 	product_date date not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 create table Product_detail
 (
@@ -83,6 +83,6 @@ create table Product_detail
 	title varchar(50),
 	category varchar(30) not null,
     userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references account(userId)
 );
 
