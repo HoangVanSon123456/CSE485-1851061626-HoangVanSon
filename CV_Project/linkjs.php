@@ -8,4 +8,4 @@
     <script src="resources/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="resources/vendor/typed.js/typed.min.js"></script>
     <script src="resources/vendor/venobox/venobox.min.js"></script>
-    <script src = "resources/js/main.js"></script>
+    <script src="resources/js/main.js"></script>
