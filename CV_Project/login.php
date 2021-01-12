@@ -20,10 +20,10 @@ session_start();
 		$username = addslashes($username);
 		$password = addslashes($password);
 		if ($username == "" || $password == "") {
-			echo "username hoặc password bạn không được để trống!";
+			echo "Username or password mustn't be empty!";
 		}
 		else{
-            $sql = "select * from user where username = '$username' and password = '$password'";
+            $sql = "select * from account where username = '$username' and password = '$password'";
             $query = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($query) > 0) {
 				$_SESSION['username'] = $username;
@@ -34,12 +34,12 @@ session_start();
 					header('Location: home_Son.php');
 				}
 				else{
-					echo "Kiểm tra lại username";
+					header('Location: home.php');
 				} 
 			}	
 			else{
 				//tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
-				 echo "tên đăng nhập hoặc mật khẩu không đúng !";
+				 echo "Username or password may be not correct!";
                 // Thực thi hành động sau khi lưu thông tin vào session
                 // ở đây tiến hành chuyển hướng trang web tới một trang gọi là home.php
 			}
@@ -48,7 +48,7 @@ session_start();
 ?>
 	<form method="POST" action="login.php">
 	<fieldset>
-	    <legend>Đăng nhập</legend>
+	    <legend>Login record</legend>
 	    	<table>
 	    		<tr>
 	    			<td>Username</td>
@@ -59,7 +59,7 @@ session_start();
 	    			<td><input type="password" name="password" size="30"></td>
 	    		</tr>
 	    		<tr>
-	    			<td colspan="2" align="center"> <input name="btn_submit" type="submit" value="Đăng nhập"></td>
+	    			<td colspan="2" align="center"> <input name="btn_submit" type="submit" value="Login"></td>
 	    		</tr>
 	    	</table>
   </fieldset>
