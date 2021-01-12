@@ -3,13 +3,13 @@ session_start();
 ?>
 <html>
 <head>
-	<title>Trang đăng nhập</title>
+	<title>Login page</title>
 	<meta charset="utf-8">
 </head>
 <body>
 <?php
 	//Gọi file connection.php ở bài trước
-	require_once("config.php");
+	include "database/connect.php";
 	// Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
 	if (isset($_POST["btn_submit"])) {
 		// lấy thông tin người dùng
@@ -21,17 +21,27 @@ session_start();
 		$password = addslashes($password);
 		if ($username == "" || $password == "") {
 			echo "username hoặc password bạn không được để trống!";
-		}else{
-            $sql = "select * from user where username = '$username' and password = '$password'";
-            $query = mysqli_query($link,$sql);
+		}
+		else{
+            $sql = "select * from personal_information where Username = '$username' and Pass = '$password'";
+            $query = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($query) > 0) {
-                $_SESSION['username'] = $username;
-                header('Location: home.php');
-			}else{
+				$_SESSION['username'] = $username;
+				if ($username =='Tu1602'){
+					header('Location: home_Tu.php');
+				}
+				elseif ($username == "Son1234" ){
+					header('Location: home_Son.php');
+				}
+				else{
+					echo "Kiểm tra lại username";
+				} 
+			}	
+			else{
 				//tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
 				 echo "tên đăng nhập hoặc mật khẩu không đúng !";
                 // Thực thi hành động sau khi lưu thông tin vào session
-                // ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
+                // ở đây tiến hành chuyển hướng trang web tới một trang gọi là home.php
 			}
 		}
 	}
@@ -49,10 +59,7 @@ session_start();
 	    			<td><input type="password" name="password" size="30"></td>
 	    		</tr>
 	    		<tr>
-	    			<td colspan="2" align="right"> <input name="btn_submit" type="submit" value="Đăng nhập"></td>
-					<button class="btn">
-					<span class="badge badge-primary"><a href= "register.php">Đăng Ký</a></span>
-					</button>
+	    			<td colspan="2" align="center"> <input name="btn_submit" type="submit" value="Đăng nhập"></td>
 	    		</tr>
 	    	</table>
   </fieldset>

@@ -1,56 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang ="en">
 	<head>
-		<title>kungfuphp - Form đăng ký thành viên</title>
+		<meta charset="UTF-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Register page</title>
 	</head>
 	<body>
 		<?php
-		require_once("config.php");
+		include "database/connect.php";
 		if (isset($_POST["btn_submit"])) {
-  			//lấy thông tin từ các form bằng phương thức POST
+			//lấy thông tin từ các form bằng phương thức POST
+			$name = $_POST["name"];
+			$age = $_POST["age"];
+			$sex = $_POST["sex"];
+			$email = $_POST["email"]; 
   			$username = $_POST["username"];
-  			$password = $_POST["password"];
- 			$name = $_POST["name"];
-            $email = $_POST["email"];
-            $age = $_POST["age"];
+			$password = $_POST["pass"];
+			$carrer = $_POST["carrer"]; 
             $phone = $_POST["phone"];
             $description = $_POST["description"];
             $image = $_POST["image"];
   			//Kiểm tra điều kiện bắt buộc đối với các field không được bỏ trống
-              if ($username == "" || $password == "" || $name == "" || $email == ""  || $age == ""
-               || $phone == "" || $description == "" || $image == "") {
+              if ($name==""|| $age=="" ||$sex=="" || $email == ""|| $username == "" || $password == ""|| $carrer == ""
+               || $phone == "" || $description == "") {
                    echo "bạn vui lòng nhập đầy đủ thông tin";
                    $password = md5($password);
-  			}else{
+			  }
+			  else
+			  {
   					// Kiểm tra tài khoản đã tồn tại chưa
-  					$sql="select * from user where username='$username'";
-					$kt=mysqli_query($link, $sql);
-					if(mysqli_num_rows($kt)  > 0){
-						echo "Tài khoản đã tồn tại";
-					}else{
+  				$sql="select * from personal_information where Username='$username'";
+				$kt=mysqli_query($conn, $sql);
+				if(mysqli_num_rows($kt)  > 0){
+					echo "Tài khoản đã tồn tại";
+				}
+				else{
 						//thực hiện việc lưu trữ dữ liệu vào db
-	    				$sql = "INSERT INTO user(
-	    					username,
-	    					password,
-	    					name,
-						    email,
-                            age,
-                            phone,
-                            description,
-                            image
+	    				$sql1 = "INSERT INTO personal_information(
+	    					Name,
+							Age,
+							Sex,
+							Email,
+							Username,
+	    					Pass,
+	    					Carrer,
+                            Phone,
+                            Description,
+                            Image
 	    					) VALUES (
+							'$name',
+							'$age',
+							'$sex',
+							'$email',
 	    					'$username',
 	    					'$password',
-						    '$name',
-	    					'$email',
-                            '$age',
-                            '$phone',
+						    '$carrer',
+	    					'$phone',
                             '$description',
                             '$image'
 	    					)";
 					    // thực thi câu $sql với biến conn lấy từ file connection.php
-   						mysqli_query($link,$sql);
-                           echo "chúc mừng bạn đã đăng ký thành công";
-                           header('Location: home.php');
+						   
+						mysqli_query($conn,$sql1);
+                        echo "chúc mừng bạn đã đăng ký thành công";
+                      	header('Location: login.php');
 					}
 									    
 					
@@ -61,6 +74,22 @@
 		<table>
 			<tr>
 				<td colspan="2">Form dang ky</td>
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" id="name" name="name"></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="text" id="age" name="age"></td>
+			</tr>
+			<tr>
+				<td>Sex:</td>
+				<td><input type="text" id="sex" name="sex"></td>
+			</tr>
+			<tr>
+				<td>Email :</td>
+				<td><input type="text" id="email" name="email"></td>
 			</tr>	
 			<tr>
 				<td>Username :</td>
@@ -68,19 +97,11 @@
 			</tr>
 			<tr>
 				<td>Password :</td>
-				<td><input type="password" id="password" name="password"></td>
+				<td><input type="password" id="password" name="pass"></td>
 			</tr>
 			<tr>
-				<td>Ho Ten :</td>
-				<td><input type="text" id="name" name="name"></td>
-			</tr>
-			<tr>
-				<td>Email :</td>
-				<td><input type="text" id="email" name="email"></td>
-			</tr>
-            <tr>
-				<td>Age :</td>
-				<td><input type="text" id="age" name="age"></td>
+				<td>Carrer :</td>
+				<td><input type="text" id="carrer" name="carrer"></td>
 			</tr>
             <tr>
 				<td>Phone :</td>

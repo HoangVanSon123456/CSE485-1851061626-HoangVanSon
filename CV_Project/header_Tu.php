@@ -1,6 +1,6 @@
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
         <div class="container">
-          <a class="navbar-brand js-scroll" href="home.php">Curriculum Vitae</a>
+          <a class="navbar-brand js-scroll" href="home_Tu.php">Curriculum Vitae</a>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
           </button>
           <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
@@ -26,8 +26,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="register.php">Register</a>
-                    <a class="dropdown-item" href="login.php">Login</a>
+                    <a class="dropdown-item" href="crud.php">CRUD action</a>
+                    <a class="dropdown-item" href="logout.php">Log out</a>
                 </div>
             </li>
             </ul>

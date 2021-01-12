@@ -9,14 +9,14 @@
     <?php include "linkcss.php" ?> 
   </head>
   <body id ="page-top">
-    <?php include "header.php" ?>
+    <?php include "header_Tu.php" ?>
       <div id="home" class="intro route bg-image" style="background-image: url(resources/img/1130.jpg)">
         <div class="overlay-itro"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
             <div class="container">
-              <h1 class="intro-title mb-4">Hello, We are Ta Anh Tu and Hoang Van Son</h1>
-              <p class="intro-subtitle"><span class="text-slider-items">Welcome,to,our,demo,CV</span><strong class="text-slider"></strong></p>
+              <h1 class="intro-title mb-4">Hello, my name is Ta Anh Tu</h1>
+              <p class="intro-subtitle"><span class="text-slider-items">Welcome,to,my,demo,CV</span><strong class="text-slider"></strong></p>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from personal_information where ID_personal = 4";
+                          $sql1="SELECT * from personal_information where ID_personal = 1";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                       ?>
@@ -68,7 +68,10 @@
                           $users4 = mysqli_fetch_all($result4);
                           $sql5="SELECT * from skill where ID_skill = 4";
                           $result5 = mysqli_query($conn,$sql5);
-                          $users5 = mysqli_fetch_all($result5); 
+                          $users5 = mysqli_fetch_all($result5);
+                          $sql30="SELECT * from skill where ID_skill = 5";
+                          $result30 = mysqli_query($conn,$sql30);
+                          $users30 = mysqli_fetch_all($result30);  
                       ?>
                       <!-- //3. Xử lý kết quả -->
                       <p class="title-s">Skill</p>
@@ -84,9 +87,9 @@
                       <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <span><?php foreach($users5 as $user5) echo $user5[1]?></span> <span class="pull-right"><?php foreach($users5 as $user5) echo $user5[2]?></span>
+                      <span><?php foreach($users30 as $user30) echo $user30[1]?></span> <span class="pull-right"><?php foreach($users30 as $user30) echo $user30[2]?></span>
                       <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
                     </div>
                   </div>

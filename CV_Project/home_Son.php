@@ -9,14 +9,14 @@
     <?php include "linkcss.php" ?> 
   </head>
   <body id ="page-top">
-    <?php include "header.php" ?>
+    <?php include "header_Son.php" ?>
       <div id="home" class="intro route bg-image" style="background-image: url(resources/img/1130.jpg)">
         <div class="overlay-itro"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
             <div class="container">
-              <h1 class="intro-title mb-4">Hello, We are Ta Anh Tu and Hoang Van Son</h1>
-              <p class="intro-subtitle"><span class="text-slider-items">Welcome,to,our,demo,CV</span><strong class="text-slider"></strong></p>
+              <h1 class="intro-title mb-4">Hello, my name is Hoang Van Son</h1>
+              <p class="intro-subtitle"><span class="text-slider-items">Welcome,to,my,demo,CV</span><strong class="text-slider"></strong></p>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from personal_information where ID_personal = 4";
+                          $sql1="SELECT * from personal_information where ID_personal = 2";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                       ?>
@@ -314,7 +314,7 @@
                                 Work History
                             </h3>
                             <p class="subtitle-b">
-                            What I do
+                            What we do
                             </p>
                             <div class="line-mf"></div>
                         </div>
@@ -399,7 +399,7 @@
                             Education History
                         </h3>
                         <p class="subtitle-b">
-                            What I learn
+                            What we learn
                         </p>
                         <div class="line-mf"></div>
                     </div>
@@ -508,7 +508,7 @@
             <div class="col-md-12">
                 <div class="title-box text-center">
                     <h3 class="title-a">
-                        Our team
+                        My team
                     </h3>
                     <p class="subtitle-b">
                         Include
