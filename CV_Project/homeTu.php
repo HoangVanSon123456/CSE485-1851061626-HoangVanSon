@@ -41,7 +41,7 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from personal_information where ID_personal = 1";
+                          $sql1="SELECT * from user where id = 1";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                       ?>

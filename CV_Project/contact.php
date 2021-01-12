@@ -14,8 +14,8 @@
     "Thông điệp:".$thongdiep."\n";
     $headers = "From:" . $from;
     mail($to1,$subject, $message, $headers);
-    mail($to2)
-    echo "Email successfully sent to $to...";
+    mail($to2,$subject, $message, $headers);
+    echo "Email successfully sent to .$to1..."
     }
     else{
       echo "Email sending failed, please check your information again";

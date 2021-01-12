@@ -31,7 +31,7 @@
                         <div class="about-info">
                         <?php
                           //1. Kết nối database
-                          include "config.php";
+                           include "database/connect.php";
                           //2. Khai báo truy vấn
                           $sql15="SELECT * from user where id = 1";
                           $result15 = mysqli_query($link,$sql15);

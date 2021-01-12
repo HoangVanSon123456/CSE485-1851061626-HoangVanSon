@@ -23,7 +23,7 @@ session_start();
 			echo "username hoặc password bạn không được để trống!";
 		}
 		else{
-            $sql = "select * from personal_information where Username = '$username' and Pass = '$password'";
+            $sql = "select * from user where username = '$username' and password = '$password'";
             $query = mysqli_query($conn,$sql);
 			if (mysqli_num_rows($query) > 0) {
 				$_SESSION['username'] = $username;
