@@ -9,7 +9,7 @@
     <?php include "linkcss.php" ?> 
   </head>
   <body id ="page-top">
-    <?php include "header.php" ?>
+    <?php include "header_admin.php" ?>
       <div id="home" class="intro route bg-image" style="background-image: url(resources/img/1130.jpg)">
         <div class="overlay-itro"></div>
         <div class="intro-content display-table">
@@ -825,7 +825,7 @@
     </main>
     <!-- ======= Footer ======= -->
     <?php
-        include "footer.php"
+        include "footer_admin.php"
     ?><!-- End  Footer -->
       <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <div id="preloader"></div>

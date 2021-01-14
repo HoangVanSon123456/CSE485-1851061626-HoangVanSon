@@ -29,8 +29,8 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="register.php">Register</a>
-                    <a class="dropdown-item" href="login.php">Login</a>
+                    
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </li>
             </ul>
