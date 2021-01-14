@@ -6,7 +6,7 @@
           <div class="copyright-box">
             <p class="copyright">&copy; Copyright <strong>Curriculum Vitae</strong>. All Rights Reserved</p>
             <div class="credits">
-              Designed by <a href="#team">MyTeam</a>
+              Designed by <a href="teams.php">MyTeam</a>
             </div>
           </div>
         </div>

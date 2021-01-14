@@ -20,9 +20,6 @@
               <li class="nav-item">
                 <a class="nav-link js-scroll" href="#work">Work</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link js-scroll" href="#contact">Contact</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">

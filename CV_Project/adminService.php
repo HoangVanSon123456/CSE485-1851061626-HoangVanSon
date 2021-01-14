@@ -53,53 +53,25 @@
             <li><a href="adminService.php"><em class="fa fa-bar-chart">&nbsp;</em>Service</a></li>
             <li><a href="adminAchievement.php"><em class="fa fa-toggle-off">&nbsp;</em>Achievement</a></li>
             <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-            <li class="parent ">
-                <a data-toggle="collapse" href="#sub-item-1">
-                    <em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-1">
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-                        </a>
-                    </li>
-                </ul>
-            </li>
             <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em>Logout</a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-        <h1 style="color: #448aff;text-align: center;">User</h1>
+        <h1 style="color: #448aff;text-align: center;">Service</h1>
         <?php
         require_once "database/connect.php";
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM service";
          if($result = mysqli_query($conn, $sql)){
             if(mysqli_num_rows($result) > 0){
             echo "<table class='table table-striped'>";
                 echo "<div class='dropdown'>";
-                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right' href='createUser.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
+                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right' href='createService.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
                 echo "</div>";
                 echo "<thead>";
                     echo "<tr class='row-name'>";
                         echo "<th>#</th>";
                         echo "<th>Name</th>";
-                        echo "<th>UserName</th>";
-                        echo "<th>Password</th>";
-                        echo "<th>Age</th>";
-                        echo "<th>Email</th>";
-                        echo "<th>Phone</th>";
                         echo "<th>Description</th>";
-                        echo "<th>Image</th>";
                         echo "<th>Settings</th>";
                     echo "</tr>";
                 echo "</thead>"; 
@@ -108,21 +80,15 @@
                     echo "<tr class='ow-content'>";
                         echo "<td>". $row['id'] ."</td>";
                         echo "<td>". $row['name'] ."</td>";
-                        echo "<td>". $row['username'] ."</td>";
-                        echo "<td>". $row['password'] ."</td>";
-                        echo "<td>". $row['age'] ."</td>";
-                        echo "<td>". $row['email'] ."</td>";
-                        echo "<td>". $row['phone'] ."</td>";
                         echo "<td>". $row['description'] ."</td>";
-                        echo "<td>". $row['image'] ."</td>";
                         echo "<td>";
-                            echo "<a class='btn btn-danger edit' href='deleteUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-danger edit' href='deleteService.php?id=".$row['id']."' aria-label='Settings'>
                                <i class='fa fa-trash' aria-hidden='true '></i></a>";
                             echo "&nbsp";
-                            echo "<a class='btn btn-info edit ' href='editUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-info edit ' href='editService.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-pencil-square-o ' aria-hidden='true '></i></a> ";
                             echo "&nbsp";
-                            echo "<a class='btn btn-success edit ' href='readUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-success edit ' href='readService.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-eye' aria-hidden='true '></i></a> ";
                         echo "</td>";
                     echo "</tr>";

@@ -12,43 +12,41 @@
 			//lấy thông tin từ các form bằng phương thức POST
 			$name = $_POST["name"];
 			$age = $_POST["age"];
-			$address = $_POST["address"];
+			$sex = $_POST["sex"];
 			$email = $_POST["email"]; 
   			$username = $_POST["username"];
-			$password = $_POST["password"];
+			$password = $_POST["pass"];
 			$carrer = $_POST["carrer"]; 
             $phone = $_POST["phone"];
-			$description = $_POST["description"];
-			$get_in_touch = $_POST["get_in_touch"];
+            $description = $_POST["description"];
             $image = $_POST["image"];
   			//Kiểm tra điều kiện bắt buộc đối với các field không được bỏ trống
-              if ($name==""|| $age==""|| $address==""  || $email == ""|| $username == "" || $password == ""|| $carrer == ""
+              if ($name==""|| $age=="" ||$sex=="" || $email == ""|| $username == "" || $password == ""|| $carrer == ""
                || $phone == "" || $description == "") {
-                   echo "Please enter your information full";
+                   echo "bạn vui lòng nhập đầy đủ thông tin";
                    $password = md5($password);
 			  }
 			  else
 			  {
   					// Kiểm tra tài khoản đã tồn tại chưa
-  				$sql="select * from account where userId='$username'";
+  				$sql="select * from personal_information where Username='$username'";
 				$kt=mysqli_query($conn, $sql);
 				if(mysqli_num_rows($kt)  > 0){
-					echo "Account has already existed";
+					echo "Tài khoản đã tồn tại";
 				}
 				else{
 						//thực hiện việc lưu trữ dữ liệu vào db
-	    				$sql1 = "INSERT INTO account(
-	    					name,
-							age,
-							address,
-							email,
-							username,
-	    					password,
-	    					carrer,
-                            phone,
-                            description,
-							get_in_touch,
-                            image
+	    				$sql1 = "INSERT INTO personal_information(
+	    					Name,
+							Age,
+							Sex,
+							Email,
+							Username,
+	    					Pass,
+	    					Carrer,
+                            Phone,
+                            Description,
+                            Image
 	    					) VALUES (
 							'$name',
 							'$age',
@@ -59,13 +57,12 @@
 						    '$carrer',
 	    					'$phone',
                             '$description',
-							'$get_in_touch',
                             '$image'
 	    					)";
 					    // thực thi câu $sql với biến conn lấy từ file connection.php
 						   
 						mysqli_query($conn,$sql1);
-                        echo "Congratulations, you have successfully registered";
+                        echo "chúc mừng bạn đã đăng ký thành công";
                       	header('Location: login.php');
 					}
 									    
@@ -76,7 +73,7 @@
 	<form action="register.php" method="post">
 		<table>
 			<tr>
-				<td colspan="2">Register record</td>
+				<td colspan="2">Form dang ky</td>
 			</tr>
 			<tr>
 				<td>Name:</td>
@@ -87,8 +84,8 @@
 				<td><input type="text" id="age" name="age"></td>
 			</tr>
 			<tr>
-				<td>Address:</td>
-				<td><input type="text" id="address" name="address"></td>
+				<td>Sex:</td>
+				<td><input type="text" id="sex" name="sex"></td>
 			</tr>
 			<tr>
 				<td>Email :</td>
@@ -100,7 +97,7 @@
 			</tr>
 			<tr>
 				<td>Password :</td>
-				<td><input type="password" id="password" name="password"></td>
+				<td><input type="password" id="password" name="pass"></td>
 			</tr>
 			<tr>
 				<td>Carrer :</td>
@@ -114,16 +111,12 @@
 				<td>Description :</td>
 				<td><input type="text" id="description" name="description"></td>
 			</tr>
-			<tr>
-				<td>Get in touch :</td>
-				<td><input type="text" id="get_in_touch" name="get_in_touch"></td>
-			</tr>
             <tr>
 				<td>Image :</td>
-				<td><input type="text" id="image" name="image"></td>
+				<td><input type="file" name="fileupload" id="fileupload"></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Register"></td>
+				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Dang ky"></td>
 			</tr>
 
 		</table>
