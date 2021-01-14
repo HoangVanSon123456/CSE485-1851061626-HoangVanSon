@@ -104,7 +104,8 @@
         <div class="divider"></div>
         <form role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <!-- <input type="text" class="form-control" placeholder="Search"> -->
+                <a href="search.php" class="btn btn-primary">Search</a>
             </div>
         </form>
         <ul class="nav menu">
@@ -326,6 +327,62 @@
         echo"</div>";
     ?>
 </section>
+<section id="team">
+<?php
+        echo"<div class='col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main'>";
+        echo"<h1 style='color: #448aff;text-align: center;'>Team</h1>";
+        //1. Kết nối database
+        include "database/connect.php";
+        //2. Khai báo truy vấn
+        $sql="SELECT * from teams";
+        $result = mysqli_query($conn,$sql);
+        $users = mysqli_fetch_all($result);
+        // echo "<pre>";
+        // echo print_r($users);
+        // echo "</pre>";
+        echo"<table class='table table-striped'>";
+        echo"<div class=dropdown'>";
+            echo"<a class='btn-top' style='margin-right: 15px;text-align: right' href='create_teamT.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
+        echo"</div>";
+        echo"<br>";
+        echo"<thead>";
+            echo"<tr class='row-name'>";
+                echo "<th>ID</th>";
+                echo "<th>Name</th>";
+                echo "<th>Description</th>";
+                echo "<th>Settings</th>";
+            echo "</tr>";
+        echo"</thead>";
+        foreach($users as $user)
+        {
+            // $raw_password = $user[6];
+            // //Sinh ra chuỗi dài 32 ngẫu nhiên, cũng cần lưu chuỗi này vào một cột trong DB
+            // $salt = random_bytes(32);
+            // //Sử dụng thêm một salt cố định
+            // $staticSalt = 'G4334#';
+            // $crypt = md5($staticSalt.$raw_password.$salt);
+            echo"<tbody>";
+            echo"<tr class='row-content'>";
+            echo "<td>$user[0]</td>";
+            echo "<td>$user[1]</td>";
+            echo "<td style='width:70%'>$user[2]</td>";
+            echo "<td>";
+            echo "<a class='btn btn-success edit ' href='read_teamT.php?id=".$user[0]."' aria-label='Settings '>
+                <i class='fa fa-eye' aria-hidden='true'></i></a> ";
+            echo "&nbsp";
+            echo "<a class='btn btn-info edit ' href='edit_teamT.php?id=".$user[0]."' aria-label='Settings '>
+                <i class='fa fa-pencil-square-o ' aria-hidden='true '></i></a> ";
+            echo "<a class='btn btn-danger edit' href='delete_teamT.php?id=".$user[0]."' aria-label='Settings'>
+                <i class='fa fa-trash' aria-hidden='true '></i></a>";
+            echo "</td>";
+            echo"</tr>";
+            echo"</tbody>";
+        }
+        echo"</table>";
+        echo"</div>";
+    ?>
+</section>
+
     <!--/.main-->
     <script src="resources/admin/js/jquery-1.11.1.min.js"></script>
     <script src="resources/admin/js/bootstrap.min.js"></script>
