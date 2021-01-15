@@ -20,7 +20,7 @@
                         <h1>Invalid Request</h1>
                     </div>
                     <div class="alert alert-danger fade in">
-                        <p>Xin lỗi, Yêu cầu không hợp lệ. Xin vui lòng <a href="index.php" class="alert-link">go back</a> and try again.</p>
+                        <p>Sorry, you've made an invalid request. Please <a href="index.php" class="alert-link">go back</a> and try again.</p>
                     </div>
                 </div>
             </div>        

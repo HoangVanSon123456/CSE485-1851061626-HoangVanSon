@@ -1,5 +1,5 @@
 -- create database CV
-create table user
+create table users
 (
 	userId int primary key AUTO_INCREMENT,
 	name varchar(40) not null,
@@ -16,73 +16,73 @@ create table user
 );
 create table skills
 (
-	skillId int primary key,
+	skillId int primary key AUTO_INCREMENT,
 	name varchar(20) not null,
 	parameter varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table achievement
 (
-	achievementId int primary key,
+	achievementId int primary key AUTO_INCREMENT,
 	name varchar(20) not null,
 	parameter varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table services
 (
-	serviceId int primary key,
+	serviceId int primary key AUTO_INCREMENT,
 	name varchar(30) not null,
 	decription varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 
 create table history
 (
-	historyId int primary key,
+	historyId int primary key AUTO_INCREMENT,
 	name varchar(30) not null,
 	content varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table education_history
 (
-	educationId int primary key,
+	educationId int primary key AUTO_INCREMENT,
     name varchar(30) not null,
 	content varchar(999) not null,
 	year_start int not null,
 	course_time varchar(10) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table teams
 (
-	teamId int primary key,
+	teamId int primary key AUTO_INCREMENT,
 	name varchar(20) not null,
 	decription varchar(999) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table product
 (
-	productId int primary key,
+	productId int primary key AUTO_INCREMENT,
 	name varchar(50) not null,
 	image varchar(255) ,
-	product_date date not null,
+	product_date varchar(50) not null,
 	userId int,
-	foreign key (userId) references user(userId)
+	foreign key (userId) references users(userId)
 );
 create table Product_detail
 (
-	pro_detailID int primary key,
+	pro_detailID int primary key AUTO_INCREMENT,
 	client varchar(50) not null,
 	project_url varchar(40) not null,
 	content varchar(999) not null,
 	title varchar(50),
 	category varchar(30) not null,
-    userId int,
-	foreign key (userId) references user(userId)
+    productId int,
+	foreign key (productId) references product(productId)
 );
 

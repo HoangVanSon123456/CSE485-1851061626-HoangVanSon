@@ -1,82 +1,61 @@
+<?php
+      include "/database/connect.php";
+      $sql = "select * from user";
+      $result = mysqli_query($conn,$sql);
+      $users = mysqli_fetch_all($result);
+      $name = '';
+      $username = '';
+      $password = '';
+      $age = '';
+      $email = '';
+      $description = ''; $phone = '';
+      if (isset($_POST['btn-submit'])) 
+      {
+        $name = $_POST['name'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $age = $_POST['age'];
+        $email = $_POST['email'];
+        $description = $_POST['description'];
+        $phone = $_POST['phone'];
+        if(empty($name)||empty($username)||empty($password)||empty($age)||empty($email)
+        ||empty($description)||empty($phone))
+        {
+          header('location: /error.php');
+          exit();
+        }
+        else 
+        {
+          $sql2 = "insert into user (name,username,password,age,email,description,phone) values
+          ('$name','$username','$password','$age','$email','$description','$phone')" ;
+          mysqli_query($conn, $sql2);
+          header('location: /adminpage/adminAbout.php');
+          exit();
+        }
+    }
+?>
+
 <!DOCTYPE html>
-<html lang ="en">
-	<head>
-		<meta charset="UTF-8">
- 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Register page</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <style>
-            .bs-example{
-             margin: 20px;        
-            }
-        </style>
-	</head>
-	<body>
-		<?php
-		include "database/connect.php";
-		if (isset($_POST["btn_submit"])) {
-			//lấy thông tin từ các form bằng phương thức POST
-			$name = $_POST["name"];
-			$age = $_POST["age"];	
-			$email = $_POST["email"]; 
-  			$username = $_POST["username"];
-			$password = $_POST["password"];	
-            $phone = $_POST["phone"];
-			$description = $_POST["description"];	
-            $image = $_POST["image"];
-  			//Kiểm tra điều kiện bắt buộc đối với các field không được bỏ trống
-              if ($name==""|| $age=="" || $email == ""|| $username == "" || $password == ""
-               || $phone == "" || $description == "") {
-                   echo "Please enter your information full";
-                   $password = md5($password);
-			  }
-			  else
-			  {
-  					// Kiểm tra tài khoản đã tồn tại chưa
-  				$sql="select * from user where userId='$username'";
-				$kt=mysqli_query($conn, $sql);
-				if(mysqli_num_rows($kt)  > 0){
-					echo "Account has already existed";
-				}
-				else{
-						//thực hiện việc lưu trữ dữ liệu vào db
-	    				$sql1 = "INSERT INTO user(
-	    					name,
-							age,							
-							email,
-							username,
-	    					password,	    					
-                            phone,
-                            description,							
-                            image
-	    					) VALUES (
-							'$name',
-							'$age',			
-							'$email',
-	    					'$username',
-	    					'$password',
-	    					'$phone',
-                            '$description',
-                            '$image'
-	    					)";
-					    // thực thi câu $sql với biến conn lấy từ file connection.php
-						   
-						mysqli_query($conn,$sql1);
-                        echo "Congratulations, you have successfully registered";
-                      	header('Location: home.php');
-					}
-									    
-					
-			  }
-	}
-	?>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Create User</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .bs-example{
+        margin: 20px;        
+    }
+</style>
+</head>
+<body>
 <div class="bs-example">
-    <form action="register.php" class="needs-validation" method="post" novalidate>
-         <h2>Register</h2>
+    <form action="createUser.php" class="needs-validation" method="post" novalidate>
+         <h2>Create User</h2>
         <div class="form-group">
             <label for="inputEmail">Name</label>
             <input type="name" class="form-control" id="name" name="name" placeholder="Name" required>
@@ -113,8 +92,8 @@
             <div class="invalid-feedback">Please enter a valid decription.</div>
         </div>
         <div class="form-group">
-            <input name ="btn_submit" type="submit" class="btn btn-primary" value="Register">
-        <a href="home.php" class="btn btn-default">Cancel</a>
+            <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
+        <a href="/adminpage/adminAbout.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>
@@ -141,5 +120,5 @@
         })();
     </script>
 </div>
-	</body>
-	</html>
+</body>
+</html>

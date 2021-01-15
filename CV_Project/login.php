@@ -3,7 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <title>Existing Login Form a Flat Responsive Widget Template :: W3layouts</title>
@@ -48,10 +47,10 @@ session_start();
 			if (mysqli_num_rows($query) > 0) {
 				$_SESSION['username'] = $username;
 				if ($username =='Tu1602'){
-					header('Location: adminAbout.php');
+					header('Location: adminpage/adminAbout.php');
 				}
 				elseif ($username == "Son1234" ){
-					header('Location: adminAbout.php');
+					header('Location: adminpage/adminAbout.php');
 				}
 				else{
 					header('Location: home.php');
