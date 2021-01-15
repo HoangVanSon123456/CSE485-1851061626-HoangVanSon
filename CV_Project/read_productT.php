@@ -1,12 +1,12 @@
 <?php 
       include "database/connect.php";
-      $sql = "select * from product,product_detail WHERE product.productId=product_detail.productId";
+      $sql = "select * from product";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from product,product_detail WHERE product.productId=product_detail.productId and product.productId =" . $result;
+        $sql1 = "select * from product where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -14,14 +14,15 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['productId'];
-            $name = $a['name'];
-            $date = $a['product_date'];
-            $client = $a['client'];
-            $url = $a['project_url'];
-            $content = $a['content'];
-            $title = $a['title'];
-            $category = $a['category'];
+        $id = $a['id'];
+        $name = $a['name'];
+        $time_start = $a['time_start'];
+        $description =$a['description'];
+        $url = $a['url'];
+        $content = $a['content'];
+        $title = $a['title'];
+        $category = $a['category'];
+        $image = $a['image'];
         }
     }
 ?>
@@ -45,13 +46,13 @@
             <input type="name" class="form-control" id="name" name="name" value="<?php echo $name ?>" disabled ="disabled">
         </div>
         <div class="form-group">
-            <label for="inputdate"><strong>Date</strong></label>
-            <input type="date" class="form-control" id="date" name="date" value= "<?php echo $date ?>" disabled ="disabled">
+            <label for="inputdate"><strong>Time Start</strong></label>
+            <input type="date" class="form-control" id="time_start" name="time_start" value= "<?php echo $time_start ?>" disabled ="disabled">
            
         </div>
         <div class="form-group">
-            <label for="inputcontent"><strong>Client</strong></label>
-            <input type="client" class="form-control" id="client" name="client" value= "<?php echo $client ?>" disabled ="disabled">
+            <label for="inputcontent"><strong>DSescription</strong></label>
+            <input type="client" class="form-control" id="description" name="description" value= "<?php echo $description ?>" disabled ="disabled">
            
         </div>
           <div class="form-group">
@@ -74,9 +75,14 @@
             <input type="category" class="form-control" id="category" name = "category" value= "<?php echo $category ?>" disabled ="disabled">
            
         </div>
+         <div class="form-group">
+            <label for="inputcoursetime"><strong>Image</strong></label>
+            <input type="category" class="form-control" id="image" name = "image" value= "<?php echo $image ?>" disabled ="disabled">
+           
+        </div>
         <div class="form-group">
         
-        <a href="admin_Tu.php" class="btn btn-primary">Cancel</a>
+        <a href="adminProduct.php" class="btn btn-primary">Cancel</a>
         </div>
 
     </form>

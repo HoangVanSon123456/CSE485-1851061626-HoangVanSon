@@ -6,19 +6,18 @@
       $name = '';
       $content = '';
       $year_start = '';
-      $course_time = '';
+      $style_time = '';
       if (isset($_POST['btn-submit'])) 
       {
         $name = $_POST['name'];
         $content = $_POST['content'];
         $year_start = $_POST['year_start'];
-        $course_time = $_POST['course_time'];
+        $style_time = $_POST['style_time'];
         $sql2 = "INSERT INTO education_history
-        (name, content, year_start, course_time) VALUES('$name','$content','$year_start','$course_time')" ;
+        (name, content, year_start, style_time) VALUES('$name','$content','$year_start','$style_time')" ;
         mysqli_query($conn, $sql2);
-        header('location: admin_Tu.php');
+        header('location: adminEduHistory.php');
     }
-    
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,13 +48,13 @@
             <div class="invalid-feedback">Please enter a valid start year to continue.</div>
         </div>
         <div class="form-group">
-            <label for="inputcoursetime"><strong>Course time</strong></label>
-            <input type="coursetime" class="form-control" id="course_time" name = "course_time" placeholder="Enter your course time" required>
+            <label for="inputcoursetime"><strong>Style time</strong></label>
+            <input type="style_time" class="form-control" id="style_time" name = "style_time" placeholder="Enter your course time" required>
             <div class="invalid-feedback">Please enter a valid course time to continue.</div>
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="admin_Tu.php" class="btn btn-default">Cancel</a>
+        <a href="adminEduHistory.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

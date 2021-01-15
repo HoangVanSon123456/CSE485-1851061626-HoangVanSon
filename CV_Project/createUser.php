@@ -26,41 +26,13 @@
         }
         else 
         {
-          $sql2 = "insert into user (name,username,password,age,email,description,image,phone) values
-          ('$name','$username','$password','$age','$email','$description','$image','$phone')" ;
+          $sql2 = "insert into user (name,username,password,age,email,description,phone) values
+          ('$name','$username','$password','$age','$email','$description','$phone')" ;
           mysqli_query($conn, $sql2);
           header('location: adminAbout.php');
           exit();
         }
     }
-if (isset($_POST['btn-thuc-hien'])) {
-$errors= array();
-$file_name = $_FILES['image']['name'];
-$file_size = $_FILES['image']['size'];
-$file_tmp = $_FILES['image']['tmp_name'];
-$file_type = $_FILES['image']['type'];
-$file_name_array = explode('.',$_FILES['image']['name']);
-$file_ext=strtolower(end($file_name_array));
-   
-$expensions= array("jpeg","jpg","png");
-   
-if(in_array($file_ext,$expensions)=== false){
-$errors[]="Chỉ hỗ trợ upload file JPEG hoặc PNG.";
-}
-   
-if($file_size > 2097152) {
-$errors[]='Kích thước file không được lớn hơn 2MB';
-}
-$image = $_FILES['image']['name'];
-$target = "photo/".basename($image);
-$sql = "INSERT INTO user VALUES ('$image')";
-mysqli_query($conn, $sql);
-if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-echo '<script language="javascript">alert("Đã upload thành công!");</script>';
-}else{
-echo '<script language="javascript">alert("Đã upload thất bại!");</script>';
-}
-}
 ?>
 
 <!DOCTYPE html>
@@ -118,11 +90,6 @@ echo '<script language="javascript">alert("Đã upload thất bại!");</script>
             <label for="inputEmail">Decription</label>
             <input type="decription" class="form-control" id="description" name="description" placeholder="Decription" required>
             <div class="invalid-feedback">Please enter a valid decription.</div>
-        </div>
-          <div class="form-group" method="POST" enctype="multipart/form-data">
-            <label for="inputEmail">Image: </label>
-            <input type="file" name="image"> 
-            <div class="invalid-feedback">Please enter a valid image .</div>
         </div>
         <div class="form-group">
             <input name ="btn-thuc-hien" type="submit" class="btn btn-primary" value="ok">

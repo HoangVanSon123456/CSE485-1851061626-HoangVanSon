@@ -1,10 +1,29 @@
 <?php
 session_start();
 ?>
+<!DOCTYPE html>
 <html>
+
 <head>
-	<title>Login page</title>
-	<meta charset="utf-8">
+
+    <title>Existing Login Form a Flat Responsive Widget Template :: W3layouts</title>
+
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="keywords" content="Existing Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="resources/login/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="resources/login/css/style.css" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -23,47 +42,68 @@ session_start();
 			echo "Username or password mustn't be empty!";
 		}
 		else{
-            $sql = "select * from users where username = '$username' and password = '$password'";
+            $sql = "select * from user where username = '$username' and password = '$password'";
 			$query = mysqli_query($conn,$sql);
 			$users = mysqli_fetch_all($query);
 			if (mysqli_num_rows($query) > 0) {
 				$_SESSION['username'] = $username;
 				if ($username =='Tu1602'){
-					header('Location: admin_Tu.php');
+					header('Location: adminAbout.php');
 				}
 				elseif ($username == "Son1234" ){
-					header('Location: admin_Son.php');
+					header('Location: adminAbout.php');
 				}
 				else{
 					header('Location: home.php');
 				} 
 			}	
 			else{
-				//tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
 				 echo "Username or password may be not correct!";
-                // Thực thi hành động sau khi lưu thông tin vào session
-                // ở đây tiến hành chuyển hướng trang web tới một trang gọi là home.php
 			}
 		}
-	}
+    }
 ?>
-	<form method="POST" action="login.php">
-	<fieldset>
-	    <legend>Login record</legend>
-	    	<table>
-	    		<tr>
-	    			<td>Username</td>
-	    			<td><input type="text" name="username" size="30"></td>
-	    		</tr>
-	    		<tr>
-	    			<td>Password</td>
-	    			<td><input type="password" name="password" size="30"></td>
-	    		</tr>
-	    		<tr>
-	    			<td colspan="2" align="center"> <input name="btn_submit" type="submit" value="Login"></td>
-	    		</tr>
-	    	</table>
-  </fieldset>
-  </form>
+    <h1>EXISTING LOGIN FORM</h1>
+
+    <div class="w3layoutscontaineragileits">
+        <h2>Login here</h2>
+        <form action="login.php" method="post">
+            <input type="text" name="username" placeholder="EMAIL" required="">
+            <input type="password" name="password" placeholder="PASSWORD" required="">
+            <div class="aitssendbuttonw3ls">
+                <input type="submit" name="btn_submit" value="LOGIN">
+                <div class="clear"></div>
+            </div>
+        </form>
+    </div>
+    <div class="w3footeragile">
+        <p> &copy;Login Tu and Son</p>
+    </div>
+
+
+    <script type="text/javascript" src="resources/login/js/jquery-2.1.4.min.js"></script>
+
+    <!-- pop-up-box-js-file -->
+    <script src="resources/login/js/jquery.magnific-popup.js" type="text/javascript"></script>
+    <!--//pop-up-box-js-file -->
+    <script>
+        $(document).ready(function() {
+            $('.w3_play_icon,.w3_play_icon1,.w3_play_icon2').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false,
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+        });
+    </script>
+
 </body>
+<!-- //Body -->
+
 </html>

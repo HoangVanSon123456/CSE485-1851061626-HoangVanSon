@@ -9,7 +9,7 @@
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from history where historyId =" . $result;
+        $sql1 = "select * from history where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -17,7 +17,7 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['historyId'];
+            $id = $a['id'];
             $name = $a['name'];
             $content = $a['content'];
         }
@@ -29,10 +29,10 @@
         $sql3 = "update history set 
         name='$name', 
         content='$content'
-        where historyId='$i'";  
+        where id='$i'";  
         //print_r($sql3);
         mysqli_query($conn, $sql3);
-        header('location: admin_Tu.php');
+        header('location: adminHistory.php');
     }
 ?>
 <!doctype html>

@@ -1,20 +1,21 @@
 <?php 
       include "database/connect.php";
-      $sql = "select * from product,product_detail WHERE product.productId=product_detail.productId";
+      $sql = "select * from product";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
       $id='';
       $name = '';
-      $date = '';
-      $client = '';
+      $time_start = '';
+      $description = '';
       $url ='';
       $content = '';
       $title ='';
       $category='';
+      $image='';
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from product,product_detail WHERE product.productId=product_detail.productId and product.productId =" . $result;
+        $sql1 = "select * from product WHERE id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -22,36 +23,39 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['productId'];
-            $name = $a['name'];
-            $date = $a['product_date'];
-            $client = $a['client'];
-            $url = $a['project_url'];
-            $content = $a['content'];
-            $title = $a['title'];
-            $category = $a['category'];
+        $id = $a['id'];
+        $name = $a['name'];
+        $time_start = $a['time_start'];
+        $description =$a['description'];
+        $url = $a['url'];
+        $content = $a['content'];
+        $title = $a['title'];
+        $category = $a['category'];
+        $image = $a['image'];
         }
     }
     if (isset($_POST['btn-submit'])) {
         $i = $_POST['id'];
         $name = $_POST['name'];
-        $date = $_POST['date'];
-        $client =$_POST['client'];
+        $time_start = $_POST['time_start'];
+        $description =$_POST['description'];
         $url = $_POST['url'];
         $content = $_POST['content'];
         $title = $_POST['title'];
         $category = $_POST['category'];
-        $sql3 = "update product,product_detail set 
+        $image = $_POST['image'];
+        $sql3 = "update product set 
         name='$name', 
-        product_date='$date',
-        client='$client',
-        project_url='$url',
+        time_start='$time_start',
+        description='$description',
+        url='$url',
         content='$content',
         title='$title',
-        category='$category'
-        where product.productId=product_detail.productId and product.productId='$i'";  
+        category='$category',
+        image='$image'
+        where id ='$i'";  
         mysqli_query($conn, $sql3);
-        header('location: admin_Tu.php');
+        header('location: adminProduct.php');
     }
 ?>
 <!doctype html>
@@ -74,14 +78,13 @@
             <input type="name" class="form-control" id="name" name="name" value="<?php echo $name ?>">
         </div>
         <div class="form-group">
-            <label for="inputdate"><strong>Date</strong></label>
-            <input type="date" class="form-control" id="date" name="date" value= "<?php echo $date ?>">
+            <label for="inputdate"><strong>Time Start</strong></label>
+            <input type="date" class="form-control" id="time_start" name="time_start" value= "<?php echo $time_start ?>">
            
         </div>
         <div class="form-group">
-            <label for="inputcontent"><strong>Client</strong></label>
-            <input type="client" class="form-control" id="client" name="client" value= "<?php echo $client ?>">
-           
+            <label for="inputcontent"><strong>Description</strong></label>
+            <input type="description" class="form-control" id="description" name="description" value= "<?php echo $description ?>">
         </div>
           <div class="form-group">
             <label for="inputyear"><strong>Url</strong></label>
@@ -100,16 +103,19 @@
         </div>
         <div class="form-group">
             <label for="inputcoursetime"><strong>Category</strong></label>
-            <input type="category" class="form-control" id="category" name = "category" value= "<?php echo $category ?>">
+            <input type="category" class="form-control" id="category" name ="category" value= "<?php echo $category ?>">
            
         </div>
         <div class="form-group">
+            <label for="inputcoursetime"><strong>Image</strong></label>
+            <input type="text" class="form-control" id="image" name = "image" value= "<?php echo $image ?>">
+        </div>
+        <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="admin_Tu.php" class="btn btn-default">Cancel</a>
+        <a href="adminProduct.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>
-
         <script>
         (function() {
             'use strict';

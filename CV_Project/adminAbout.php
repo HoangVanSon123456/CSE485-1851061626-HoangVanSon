@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="#"><span>Lumino</span>Admin</a>
+                  <a class="navbar-brand" href="#"><span>CV</span>Admin</a>
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -36,7 +36,7 @@
                 <img src="http://placehold.it/50/30a5ff/fff" class="img-responsive" alt="">
             </div>
             <div class="profile-usertitle">
-                <div class="profile-usertitle-name">Username</div>
+                <div class="profile-usertitle-name">Admin</div>
                 <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
             </div>
             <div class="clear"></div>
@@ -44,7 +44,7 @@
         <div class="divider"></div>
         <form role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search">
             </div>
         </form>
         <ul class="nav menu">
@@ -52,30 +52,10 @@
             <li><a href="adminSkills.php"><em class="fa fa-calendar">&nbsp;</em>Skills</a></li>
             <li><a href="adminService.php"><em class="fa fa-bar-chart">&nbsp;</em>Service</a></li>
             <li><a href="adminAchievement.php"><em class="fa fa-toggle-off">&nbsp;</em>Achievement</a></li>
-            <li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
-            <li class="parent ">
-                <a data-toggle="collapse" href="#sub-item-1">
-                    <em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-1">
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 2
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em>Logout</a></li>
+            <li><a href="adminHistory.php"><em class="fa fa-clone">&nbsp;</em>History</a></li>
+            <li><a href="adminEduHistory.php"><em class="fa fa-clone">&nbsp;</em>Education History</a></li>
+            <li><a href="adminProduct.php"><em class="fa fa-clone">&nbsp;</em>Product</a></li>
+            <li><a href="home.php"><em class="fa fa-power-off">&nbsp;</em>Logout</a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -99,11 +79,10 @@
                         echo "<th>Email</th>";
                         echo "<th>Phone</th>";
                         echo "<th>Description</th>";
-                        echo "<th>Image</th>";
                         echo "<th>Settings</th>";
                     echo "</tr>";
                 echo "</thead>"; 
-                echo "<tbody>";
+                echo "<tbody id='myTable'>";
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr class='ow-content'>";
                         echo "<td>". $row['id'] ."</td>";
@@ -114,7 +93,6 @@
                         echo "<td>". $row['email'] ."</td>";
                         echo "<td>". $row['phone'] ."</td>";
                         echo "<td>". $row['description'] ."</td>";
-                        echo "<td>". $row['image'] ."</td>";
                         echo "<td>";
                             echo "<a class='btn btn-danger edit' href='deleteUser.php?id=".$row['id']."' aria-label='Settings'>
                                <i class='fa fa-trash' aria-hidden='true '></i></a>";
@@ -148,6 +126,7 @@
     <script src="resources/admin/js/easypiechart-data.js"></script>
     <script src="resources/admin/js/bootstrap-datepicker.js"></script>
     <script src="resources/admin/js/custom.js"></script>
+    <script src="resources/admin/js/search.js"></script>
 </body>
 
 </html>

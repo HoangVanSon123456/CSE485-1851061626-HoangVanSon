@@ -6,7 +6,7 @@
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from history where historyId =" . $result;
+        $sql1 = "select * from history where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -14,7 +14,7 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['historyId'];
+            $id = $a['id'];
             $name = $a['name'];
             $content = $a['content'];
         }
@@ -44,7 +44,7 @@
             <input type="content" class="form-control" id="content" name="content" value="<?php echo $content ?>" disabled = "disabled">
             
         </div>
-        <a href="admin_Tu.php" class="btn btn-primary">Back</a>
+        <a href="adminHistory.php" class="btn btn-primary">Back</a>
 
     </form>
 

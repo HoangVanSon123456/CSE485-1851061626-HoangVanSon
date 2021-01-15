@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skills</title>
+    <title>Lumino - Charts</title>
     <link href="resources/admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/admin/css/font-awesome.min.css" rel="stylesheet">
     <link href="resources/admin/css/datepicker3.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="#"><span>CV</span>Admin</a>
+                  <a class="navbar-brand" href="#"><span>CV</span>Admin</a>
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -44,7 +44,7 @@
         <div class="divider"></div>
         <form role="search">
             <div class="form-group">
-                <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search">
+               <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search">
             </div>
         </form>
         <ul class="nav menu">
@@ -59,21 +59,22 @@
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-        <h1 style="color: #448aff;text-align: center;">Skills</h1>
+        <h1 style="color: #448aff;text-align: center;">Product</h1>
         <?php
         require_once "database/connect.php";
-        $sql = "SELECT * FROM skills";
+        $sql = "SELECT id,name,time_start,description FROM product";
          if($result = mysqli_query($conn, $sql)){
             if(mysqli_num_rows($result) > 0){
             echo "<table class='table table-striped'>";
                 echo "<div class='dropdown'>";
-                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right' href='createSkills.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
+                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right'href='create_productT.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
                 echo "</div>";
                 echo "<thead>";
                     echo "<tr class='row-name'>";
                         echo "<th>#</th>";
                         echo "<th>Name</th>";
-                        echo "<th>Parameter</th>";
+                        echo "<th>Time Start</th>";
+                        echo "<th>Description</th>";
                         echo "<th>Settings</th>";
                     echo "</tr>";
                 echo "</thead>"; 
@@ -82,15 +83,16 @@
                     echo "<tr class='ow-content'>";
                         echo "<td>". $row['id'] ."</td>";
                         echo "<td>". $row['name'] ."</td>";
-                        echo "<td>". $row['parameter'] ."</td>";
+                        echo "<td>". $row['time_start'] ."</td>";
+                        echo "<td>". $row['description'] ."</td>";
                         echo "<td>";
-                            echo "<a class='btn btn-danger edit' href='deleteSkills.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-danger edit' href='delete_productT.php?id=".$row['id']."' aria-label='Settings'>
                                <i class='fa fa-trash' aria-hidden='true '></i></a>";
                             echo "&nbsp";
-                            echo "<a class='btn btn-info edit ' href='editSkills.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-info edit ' href='edit_productT.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-pencil-square-o ' aria-hidden='true '></i></a> ";
                             echo "&nbsp";
-                            echo "<a class='btn btn-success edit ' href='readSkills.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-success edit ' href='read_productT.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-eye' aria-hidden='true '></i></a> ";
                         echo "</td>";
                     echo "</tr>";
@@ -116,7 +118,6 @@
     <script src="resources/admin/js/easypiechart-data.js"></script>
     <script src="resources/admin/js/bootstrap-datepicker.js"></script>
     <script src="resources/admin/js/custom.js"></script>
-    <script src="resources/admin/js/search.js"></script>
 </body>
 
 </html>

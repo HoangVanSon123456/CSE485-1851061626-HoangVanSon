@@ -12,7 +12,7 @@
         $sql2 = "INSERT INTO history
         (name, content) VALUES('$name','$content')" ;
         mysqli_query($conn, $sql2);
-        header('location: admin_Tu.php');
+        header('location: adminHistory.php');
     }
     
 ?>

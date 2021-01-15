@@ -755,7 +755,6 @@
                     </div>
                     <?php include "contact.php"?>
                     <div>
-                      <br>
                       <form action="#contact" method="post" role="form">
                         <div class="row">
                           <div class="col-md-12 mb-3">
@@ -794,8 +793,7 @@
                       <h5 class="title-left">
                         Get in Touch
                       </h5>
-                    </div>
-                    <br>
+                    </div>                  
                     <div class="more-info">
                       <p class="lead">
                       <?php foreach($users1 as $user1) echo $user1[10]?>

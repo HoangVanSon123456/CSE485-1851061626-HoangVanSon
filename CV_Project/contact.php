@@ -13,10 +13,10 @@
     "Thông điệp:".$thongdiep."\n";
     $headers = "From:" . $from;
     mail($to,$subject, $message, $headers);
-    echo "Email successfully sent";
+    echo '<script language="javascript">alert("Email successfully sent");</script>';
     }
     else{
-      echo "Email sending failed, please check your information again";
+      echo '<script language="javascript">alert("Email unsuccessfully sent, please check your information again ");</script>';
     }
 } 
 ?>

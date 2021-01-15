@@ -6,7 +6,7 @@
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from education_history where educationId =" . $result;
+        $sql1 = "select * from education_history where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -14,11 +14,11 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['educationId'];
+            $id = $a['id'];
             $name = $a['name'];
             $content = $a['content'];
             $year_start = $a['year_start'];
-            $course_time = $a['course_time'];
+            $style_time = $a['style_time'];
         }
     }
 ?>
@@ -52,12 +52,12 @@
             
         </div>
         <div class="form-group">
-            <label for="inputcoursetime"><strong>Course time</strong></label>
-            <input type="coursetime" class="form-control" id="course_time" name = "course_time" value="<?php echo $course_time ?>" disabled = "disabled">
+            <label for="inputcoursetime"><strong>Style Time</strong></label>
+            <input type="style_time" class="form-control" id="style_time" name = "style_time" value="<?php echo $style_time ?>" disabled = "disabled">
         
         </div>
         <div class="form-group">
-        <a href="admin_Tu.php" class="btn btn-primary">Back</a>
+        <a href="adminEduHistory.php" class="btn btn-primary">Back</a>
         </div>
 
     </form>

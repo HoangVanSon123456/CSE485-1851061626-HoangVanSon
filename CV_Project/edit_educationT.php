@@ -7,11 +7,11 @@
       $name = '';
       $content = '';
       $year_start = '';
-      $course_time = '';
+      $style_time = '';
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from education_history where educationId =" . $result;
+        $sql1 = "select * from education_history where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
@@ -19,11 +19,11 @@
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
         {
-            $id = $a['educationId'];
+            $id = $a['id'];
             $name = $a['name'];
             $content = $a['content'];
             $year_start = $a['year_start'];
-            $course_time = $a['course_time'];
+            $style_time = $a['style_time'];
         }
     }
     if (isset($_POST['btn-submit'])) {
@@ -31,16 +31,16 @@
         $name = $_POST['name'];
         $content = $_POST['content'];
         $year_start = $_POST['year_start'];
-        $course_time = $_POST['course_time'];
+        $style_time = $_POST['style_time'];
         $sql3 = "update education_history set 
         name='$name', 
         content='$content',
         year_start='$year_start',
-        course_time='$course_time' 
-        where educationId='$i'";  
+        style_time='$style_time' 
+        where id='$i'";  
         //print_r($sql3);
         mysqli_query($conn, $sql3);
-        header('location: admin_Tu.php');
+        header('location: adminEduHistory.php');
     }
 ?>
 <!doctype html>
@@ -74,13 +74,13 @@
             
         </div>
         <div class="form-group">
-            <label for="inputcoursetime"><strong>Course time</strong></label>
-            <input type="coursetime" class="form-control" id="course_time" name = "course_time" value="<?php echo $course_time ?>">
+            <label for="inputcoursetime"><strong>Style Time</strong></label>
+            <input type="style_time" class="form-control" id="style_time" name = "style_time" value="<?php echo $style_time ?>">
         
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="admin_Tu.php" class="btn btn-default">Cancel</a>
+        <a href="adminEduHistory.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

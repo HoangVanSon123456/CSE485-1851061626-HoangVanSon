@@ -1,36 +1,30 @@
-<?php 
+ <?php 
       include "database/connect.php";
-      $sql = "select * from product,product_detail WHERE product.productId=product_detail.productId";
+      $sql = "select * from product";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
-      $id='';
       $name = '';
-      $date = '';
-      $client = '';
+      $time_start = '';
+      $description = '';
       $url ='';
       $content = '';
       $title ='';
       $category='';
       if (isset($_POST['btn-submit'])) 
       {
-        $id = $_POST['id'];
         $name = $_POST['name'];
-        $date = $_POST['date'];
-        $client =$_POST['client'];
+        $time_start = $_POST['time_start'];
+        $description =$_POST['description'];
         $url = $_POST['url'];
         $content = $_POST['content'];
         $title = $_POST['title'];
         $category = $_POST['category'];
         $sql2 = "INSERT INTO product
-        (name, product_date) VALUES('$name','$date')" ;
+        (name,time_start,description,url,content,title,category) 
+        VALUES('$name','$time_start','$description','$url','$content','$title','$category')" ;
         mysqli_query($conn, $sql2);
-        $sql3 = "INSERT INTO product_detail
-        (client, project_url,content,title,category,productId) 
-        VALUES('$client','$url','$content','$title','$category','$id')" ;
-        mysqli_query($conn, $sql3);
-        header('location: admin_Tu.php');
+        header('location: adminProduct.php');
     }
-    
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,24 +39,19 @@
       <body>
       <form action="create_productT.php" class="needs-validation" method="post" novalidate>
          <h2 style = 'text-align:center'>Create New product </h2>
-         <div class="form-group">
-            <label for="inputcoursetime"><strong>ID</strong></label>
-            <input type="text" class="form-control" id="id" name = "id" placeholder="Enter your product id" required>
-            <div class="invalid-feedback">Please enter a valid id to continue.</div>
-        </div>
         <div class="form-group">
             <label for="inputname"><strong>Name</strong></label>
             <input type="name" class="form-control" id="name" name="name" placeholder="Enter your product name" required>
             <div class="invalid-feedback">Please enter a valid name to continue.</div>
         </div>
         <div class="form-group">
-            <label for="inputdate"><strong>Date</strong></label>
-            <input type="date" class="form-control" id="date" name="date" placeholder="Enter your product date" required>
+            <label for="inputdate"><strong>Time Start</strong></label>
+            <input type="date" class="form-control" id="time_start" name="time_start" placeholder="Enter your product date" required>
             <div class="invalid-feedback">Please enter a valid date to continue.</div>
         </div>
         <div class="form-group">
-            <label for="inputcontent"><strong>Client</strong></label>
-            <input type="client" class="form-control" id="client" name="client" placeholder="Enter your client name" required>
+            <label for="inputcontent"><strong>Decription</strong></label>
+            <input type="description" class="form-control" id="description" name="description" placeholder="Enter your client name" required>
             <div class="invalid-feedback">Please enter a valid client to continue.</div>
         </div>
           <div class="form-group">
@@ -87,18 +76,15 @@
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="admin_Tu.php" class="btn btn-default">Cancel</a>
+        <a href="adminProduct.php" class="btn btn-default">Cancel</a>
         </div>
-
     </form>
 
         <script>
         (function() {
             'use strict';
             window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
                 var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
                 var validation = Array.prototype.filter.call(forms, function(form) {
                     form.addEventListener('submit', function(event) {
                         if (form.checkValidity() === false) {
