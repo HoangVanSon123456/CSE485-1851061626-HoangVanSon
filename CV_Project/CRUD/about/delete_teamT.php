@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from teams";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -16,7 +16,7 @@
         $a = selectOne($_GET['id']);
         $sql5 = "delete from teams where teamId=" . $_GET['id'];
         mysqli_query($conn, $sql5);
-        header('location: /adminpage/admin_About.php');
+        header('location: /CV_Project/adminpage/admin_About.php');
         exit();
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from user";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -21,7 +21,7 @@
         if(empty($name)||empty($username)||empty($password)||empty($age)||empty($email)
         ||empty($description)||empty($phone))
         {
-          header('location: /error.php');
+          header('location: ../error.php');
           exit();
         }
         else 
@@ -29,7 +29,7 @@
           $sql2 = "insert into user (name,username,password,age,email,description,phone) values
           ('$name','$username','$password','$age','$email','$description','$phone')" ;
           mysqli_query($conn, $sql2);
-          header('location: /adminpage/adminAbout.php');
+          header('location: /CV_Project/adminpage/adminAbout.php');
           exit();
         }
     }
@@ -93,7 +93,7 @@
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminAbout.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminAbout.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

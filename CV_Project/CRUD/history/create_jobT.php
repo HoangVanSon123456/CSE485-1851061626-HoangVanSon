@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from history";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -12,7 +12,7 @@
         $sql2 = "INSERT INTO history
         (name, content) VALUES('$name','$content')" ;
         mysqli_query($conn, $sql2);
-        header('location: /adminpage/adminHistory.php');
+        header('location: /CV_Project/adminpage/adminHistory.php');
     }
     
 ?>
@@ -40,7 +40,7 @@
             <div class="invalid-feedback">Please enter a valid content to continue.</div>            
         </div>
         <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminHistory.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminHistory.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from history";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -31,7 +31,7 @@
         content='$content'
         where id='$i'";  
         mysqli_query($conn, $sql3);
-        header('location: /adminpage/adminHistory.php');
+        header('location: /CV_Project/adminpage/adminHistory.php');
     }
 ?>
 <!doctype html>
@@ -59,7 +59,7 @@
             
         </div>
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminHistory.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminHistory.php" class="btn btn-default">Cancel</a>
 
     </form>
 

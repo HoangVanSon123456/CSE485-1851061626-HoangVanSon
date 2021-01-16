@@ -1,5 +1,5 @@
 <?php
-    include "/database/connect.php";
+    include "../connect1.php";
     global $conn;
     $sql = "select * from achievement";
     $result = mysqli_query($conn,$sql);
@@ -15,7 +15,7 @@
     if (isset($_GET['id'])) {
         $row = selectOne($_GET['id']);
         if ($row === null) {
-            header('location: /error.php');
+            header('location: ../error.php');
             exit();
         }
         else 
@@ -35,7 +35,7 @@
         where id='$id'";  
         //print_r($sql3);
         mysqli_query($conn, $sql3);
-        header('location: /adminpage/adminAchievement.php');
+        header('location: /CV_Project/adminpage/adminAchievement.php');
     }
 ?>
 <!doctype html>
@@ -69,7 +69,7 @@
         </div>
         <div class="form-group">
           <input name ="btn-luu" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminAchievement.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminAchievement.php" class="btn btn-default">Cancel</a>
         
     </form>
     <!-- Optional JavaScript -->

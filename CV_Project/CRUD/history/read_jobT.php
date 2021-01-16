@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from history";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -44,7 +44,7 @@
             <input type="content" class="form-control" id="content" name="content" value="<?php echo $content ?>" disabled = "disabled">
             
         </div>
-        <a href="/adminpage/adminHistory.php" class="btn btn-primary">Back</a>
+        <a href="/CV_Project/adminpage/adminHistory.php" class="btn btn-primary">Back</a>
 
     </form>
 

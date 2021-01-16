@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from product";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -51,7 +51,7 @@
         category='$category'
         where id ='$i'";  
         mysqli_query($conn, $sql3);
-        header('location: /adminpage/adminProduct.php');
+        header('location: /CV_Project/adminpage/adminProduct.php');
     }
 ?>
 <!doctype html>
@@ -104,7 +104,7 @@
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminProduct.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminProduct.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

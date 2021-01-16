@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
     <!-- Vendor CSS Files and Template Main CSS File-->
-    <?php include "/linkcss.php" ?> 
+    <?php include "linkcss_admin.php"?>
   </head>
   <body id ="page-top">
     <?php include "header_admin.php" ?>
-      <div id="home" class="intro route bg-image" style="background-image: url(resources/img/1130.jpg)">
+      <div id="home" class="intro route bg-image" style="background-image: url(../resources/img/1130.jpg)">
         <div class="overlay-itro"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -32,14 +32,14 @@
                     <div class="row">
                       <div class="col-sm-6 col-md-5">
                         <div class="about-img">
-                          <img src="/resources/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                          <img src="../resources/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-7">
                         <div class="about-info">
                         <?php
                           //1. Kết nối database
-                          include "/database/connect.php";
+                          include "connect_admin.php";
                           //2. Khai báo truy vấn
                           $sql1="SELECT * from users where userId = 3";
                           $result1 = mysqli_query($conn,$sql1);
@@ -56,7 +56,7 @@
                     <div class="skill-mf">
                       <?php
                           //1. Kết nối database
-                          include "/database/connect.php";
+                          include "connect_admin.php";
                           //2. Khai báo truy vấn
                           $sql2="SELECT * from skills where skillId = 1";
                           $result2 = mysqli_query($conn,$sql2);
@@ -241,7 +241,7 @@
               $result15 = mysqli_query($conn,$sql15);
               $users15 = mysqli_fetch_all($result15);
         ?>
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(resources/img/counters-bg.jpg)">
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(../resources/img/counters-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
         <div class="row">
@@ -494,7 +494,7 @@
     <!--end timeline-->
       <!-- Team Section -->
       <section id="team">
-        <div class="testimonials paralax-mf bg-image" style="background-image: url(resources/img/overlay-bg.jpg)">
+        <div class="testimonials paralax-mf bg-image" style="background-image: url(../resources/img/overlay-bg.jpg)">
         <div class="overlay-mf"></div>
         <div class="container">
             <?php
@@ -518,7 +518,7 @@
                 <div id="testimonial-mf" class="owl-carousel owl-theme">
                 <div class="testimonial-box">
                     <div class="author-test">
-                    <img src="/resources/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
+                    <img src="../resources/img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
                     <span class="author"><?php foreach($users24 as $user24) echo $user24[1]?></span>
                     </div>
                     <div class="content-test">
@@ -530,7 +530,7 @@
                 </div>
                 <div class="testimonial-box">
                     <div class="author-test">
-                    <img src="/resources/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a"></a>
+                    <img src="../resources/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a"></a>
                     <span class="author"><?php foreach($users25 as $user25) echo $user25[1]?></span>
                     </div>
                     <div class="content-test">
@@ -586,9 +586,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="/resources/img/work-1.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="../resources/img/work-1.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-1.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-1.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -602,7 +602,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                         <?php echo "<a href='product_details.php?id=".$user26[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                         <?php echo "<a href='../product_details.php?id=".$user26[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -611,9 +611,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="resources/img/work-2.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="..resources/img/work-2.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-2.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-2.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -627,7 +627,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user27[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='../product_details.php?id=".$user27[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -636,9 +636,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="resources/img/work-3.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="../resources/img/work-3.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-3.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-3.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -652,7 +652,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user28[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='../product_details.php?id=".$user28[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -661,9 +661,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="resources/img/work-4.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="../resources/img/work-4.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-4.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-4.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -677,7 +677,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user29[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='../product_details.php?id=".$user29[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -686,9 +686,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="resources/img/work-5.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="../resources/img/work-5.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-5.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-5.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -702,7 +702,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='../product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -711,9 +711,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="work-box">
-                            <a href="resources/img/work-6.jpg" data-gall="portfolioGallery" class="venobox">
+                            <a href="../resources/img/work-6.jpg" data-gall="portfolioGallery" class="venobox">
                                 <div class="work-img">
-                                    <img src="/resources/img/work-6.jpg" alt="" class="img-fluid">
+                                    <img src="../resources/img/work-6.jpg" alt="" class="img-fluid">
                                 </div>
                             </a>
                             <div class="work-content">
@@ -727,7 +727,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='../product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -739,7 +739,7 @@
             </div>
         </section><!-- End Work Section -->
         <!-- Contact Section -->
-        <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(resources/img/overlay-bg.jpg)">
+        <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(../resources/img/overlay-bg.jpg)">
         <div class="overlay-mf"></div>
         <div class="container">
         <div class="row">
@@ -753,7 +753,7 @@
                         Send Message Us
                       </h5>
                     </div>
-                    <?php include "/contact.php"?>
+                    <?php include "../contact.php"?>
                     <div>
                       <form action="#contact" method="post" role="form">
                         <div class="row">
@@ -828,6 +828,6 @@
       <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
     <div id="preloader"></div>
       <!-- Vendor JS Files and Template Main JS File  -->
-    <?php include "/linkjs.php" ?>
+    <?php include "linkjs_admin.php" ?>
   </body>
 </html>

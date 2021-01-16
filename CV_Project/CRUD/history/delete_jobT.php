@@ -2,7 +2,7 @@
 
 if(isset($_POST["id"]) && !empty($_POST["id"])){
    
-    require_once "/database/connect.php";
+    require_once "../connect1.php";
     
     $sql = "DELETE FROM history WHERE id = ?";
     
@@ -12,7 +12,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $param_id = trim($_POST["id"]);
         
         if(mysqli_stmt_execute($stmt)){
-            header("location: /adminpage/adminHistory.php");
+            header("location: /CV_Project/adminpage/adminHistory.php");
             exit();
         } else{
             echo "Oops! Something went wrong. Please try again later.";
@@ -24,7 +24,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($conn);
 } else{
     if(empty(trim($_GET["id"]))){
-        header("location: /error.php");
+        header("location: ../error.php");
         exit();
     }
 }
@@ -56,7 +56,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <p>Do you really want to delete this object ?</p><br>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-success">
-                                <a href="/adminpage/adminHistory.php" class="btn btn-default">No</a>
+                                <a href="/CV_Project/adminpage/adminHistory.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>

@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from teams";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -44,7 +44,7 @@
             <input type="content" class="form-control" id="description" name="description" value="<?php echo $description ?>" disabled = "disabled">
             
         </div>
-        <a href="/adminpage/adminAbout.php" class="btn btn-primary">Back</a>
+        <a href="/CV_Project/adminpage/adminAbout.php" class="btn btn-primary">Back</a>
 
     </form>
 

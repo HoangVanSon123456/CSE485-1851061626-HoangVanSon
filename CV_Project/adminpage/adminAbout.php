@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lumino - Charts</title>
-    <link href="/resources/admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/admin/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/resources/admin/css/datepicker3.css" rel="stylesheet">
-    <link href="/resources/admin/css/styles.css" rel="stylesheet">
+    <link href="../resources/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/admin/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../resources/admin/css/datepicker3.css" rel="stylesheet">
+    <link href="../resources/admin/css/styles.css" rel="stylesheet">
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -55,19 +55,19 @@
             <li><a href="adminHistory.php"><em class="fa fa-clone">&nbsp;</em>History</a></li>
             <li><a href="adminEduHistory.php"><em class="fa fa-clone">&nbsp;</em>Education History</a></li>
             <li><a href="adminProduct.php"><em class="fa fa-clone">&nbsp;</em>Product</a></li>
-            <li><a href="/home.php"><em class="fa fa-power-off">&nbsp;</em>Logout</a></li>
+            <li><a href="../home.php"><em class="fa fa-power-off">&nbsp;</em>Logout</a></li>
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
         <h1 style="color: #448aff;text-align: center;">User</h1>
         <?php
-        require_once "database/connect.php";
+        require_once "../database/connect.php";
         $sql = "SELECT * FROM user";
          if($result = mysqli_query($conn, $sql)){
             if(mysqli_num_rows($result) > 0){
             echo "<table class='table table-striped'>";
                 echo "<div class='dropdown'>";
-                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right' href='createUser.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
+                    echo "<a class='btn-top' style='margin-right: 15px;text-align: right' href='/CV_Project/CRUD/about/createUser.php' class='btn btn-primary btn-success'> <span class='glyphicon glyphicon-plus'></span> &nbsp Create Table</a>";
                 echo "</div>";
                 echo "<thead>";
                     echo "<tr class='row-name'>";
@@ -94,13 +94,13 @@
                         echo "<td>". $row['phone'] ."</td>";
                         echo "<td>". $row['description'] ."</td>";
                         echo "<td>";
-                            echo "<a class='btn btn-danger edit' href='deleteUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-danger edit' href='/CV_Project/CRUD/about/deleteUser.php?id=".$row['id']."' aria-label='Settings'>
                                <i class='fa fa-trash' aria-hidden='true '></i></a>";
                             echo "&nbsp";
-                            echo "<a class='btn btn-info edit ' href='editUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-info edit ' href='/CV_Project/CRUD/about/editUser.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-pencil-square-o ' aria-hidden='true '></i></a> ";
                             echo "&nbsp";
-                            echo "<a class='btn btn-success edit ' href='readUser.php?id=".$row['id']."' aria-label='Settings'>
+                            echo "<a class='btn btn-success edit ' href='/CV_Project/CRUD/about/readUser.php?id=".$row['id']."' aria-label='Settings'>
                                 <i class='fa fa-eye' aria-hidden='true '></i></a> ";
                         echo "</td>";
                     echo "</tr>";
@@ -118,15 +118,15 @@
     ?>
 </div>
     <!--/.sidebar-->
-    <script src="/resources/admin/js/jquery-1.11.1.min.js"></script>
-    <script src="/resources/admin/js/bootstrap.min.js"></script>
-    <script src="/resources/admin/js/chart.min.js"></script>
-    <script src="/resources/admin/js/chart-data.js"></script>
-    <script src="/resources/admin/js/easypiechart.js"></script>
-    <script src="/resources/admin/js/easypiechart-data.js"></script>
-    <script src="/resources/admin/js/bootstrap-datepicker.js"></script>
-    <script src="/resources/admin/js/custom.js"></script>
-    <script src="/resources/admin/js/search.js"></script>
+    <script src="../resources/admin/js/jquery-1.11.1.min.js"></script>
+    <script src="../resources/admin/js/bootstrap.min.js"></script>
+    <script src="../resources/admin/js/chart.min.js"></script>
+    <script src="../resources/admin/js/chart-data.js"></script>
+    <script src="../resources/admin/js/easypiechart.js"></script>
+    <script src="../resources/admin/js/easypiechart-data.js"></script>
+    <script src="../resources/admin/js/bootstrap-datepicker.js"></script>
+    <script src="../resources/admin/js/custom.js"></script>
+    <script src="../resources/admin/js/search.js"></script>
 </body>
 
 </html>

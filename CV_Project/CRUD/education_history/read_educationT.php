@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from education_history";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -57,7 +57,7 @@
         
         </div>
         <div class="form-group">
-        <a href="/adminpage/adminEduHistory.php" class="btn btn-primary">Back</a>
+        <a href="/CV_Project/adminpage/adminEduHistory.php" class="btn btn-primary">Back</a>
         </div>
 
     </form>

@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
-    require_once "/database/connect.php";
+    require_once "../connect1.php";
     
     $sql = "SELECT * FROM service WHERE id = ?";
     
@@ -18,7 +18,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $name = $row['name'];
                 $description = $row['description'];
             } else{
-                header("location: /error.php");
+                header("location: ../error.php");
                 exit();
             }
             
@@ -31,7 +31,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     
     mysqli_close($conn);
 } else{
-    header("location: /error.php");
+    header("location: ../error.php");
     exit();
 }
 ?>
@@ -64,7 +64,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                         <label>Description</label>
                         <p class="form-control-static"><?php echo $row["description"]; ?></p>
                     </div>
-                    <p><a href="/adminpage/adminService.php" class="btn btn-success">Back</a></p>
+                    <p><a href="/CV_Project/adminpage/adminService.php" class="btn btn-success">Back</a></p>
                 </div>
             </div>        
         </div>

@@ -9,22 +9,22 @@
           <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link js-scroll active" href="home.php#home">Home</a>
+                <a class="nav-link js-scroll active" href="#home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="home.php#about">About</a>
+                <a class="nav-link js-scroll" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="home.php#resume">Resume</a>
+                <a class="nav-link js-scroll" href="#resume">Resume</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="home.php#team">Team</a>
+                <a class="nav-link js-scroll" href="#team">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="home.php#work">Work</a>
+                <a class="nav-link js-scroll" href="#work">Work</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll" href="home.php#contact">Contact</a>
+                <a class="nav-link js-scroll" href="#contact">Contact</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>

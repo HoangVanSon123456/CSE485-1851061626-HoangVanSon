@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from teams";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -31,7 +31,7 @@
         description='$description'
         where teamId='$i'";  
         mysqli_query($conn, $sql3);
-        header('location: /adminpage/adminAbout.php');
+        header('location: /CV_Project/adminpage/adminAbout.php');
     }
 ?>
 <!doctype html>
@@ -59,7 +59,7 @@
             
         </div>
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminAbout.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminAbout.php" class="btn btn-default">Cancel</a>
     </form>
 
         <script>

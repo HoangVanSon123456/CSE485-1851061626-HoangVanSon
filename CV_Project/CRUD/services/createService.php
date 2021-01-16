@@ -1,5 +1,5 @@
 <?php
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from service";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -11,7 +11,7 @@
         $description = $_POST['description'];
         if(empty($name)||empty($description))
         {
-          header('location: /error.php');
+          header('location: ../error.php');
           exit();
         }
         else 
@@ -19,7 +19,7 @@
           $sql2 = "insert into service (name,description) values
           ('$name','$description')" ;
           mysqli_query($conn, $sql2);
-          header('location: /adminpage/adminService.php');
+          header('location: /CV_Project/adminpage/adminService.php');
           exit();
         }
     }
@@ -57,7 +57,7 @@
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-        <a href="/adminpage/adminService.php" class="btn btn-default">Cancel</a>
+        <a href="/CV_Project/adminpage/adminService.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>

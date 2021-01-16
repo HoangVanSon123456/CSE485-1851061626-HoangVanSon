@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+      include "../connect1.php";
       $sql = "select * from education_history";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -39,7 +39,7 @@
         style_time='$style_time' 
         where id='$i'";  
         mysqli_query($conn, $sql3);
-        header('location: /adminpage/adminEduHistory.php');
+        header('location: /CV_Project/adminpage/adminEduHistory.php');
     }
 ?>
 <!doctype html>
@@ -79,7 +79,7 @@
         </div>
         <div class="form-group">
             <input name ="btn-submit" type="submit" class="btn btn-primary" value="Save">
-            <a href="/adminpage/adminEduHistory.php" class="btn btn-default">Cancel</a>
+            <a href="/CV_Project/adminpage/adminEduHistory.php" class="btn btn-default">Cancel</a>
         </div>
 
     </form>
