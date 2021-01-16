@@ -41,7 +41,7 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from users where userId = 3";
+                          $sql1="SELECT * from user where id = 1";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                           
@@ -58,16 +58,16 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql2="SELECT * from skills where skillId = 1";
+                          $sql2="SELECT * from skills where id = 1";
                           $result2 = mysqli_query($conn,$sql2);
                           $users2 = mysqli_fetch_all($result2);
-                          $sql3="SELECT * from skills where skillId = 2";
+                          $sql3="SELECT * from skills where id = 2";
                           $result3 = mysqli_query($conn,$sql3);
                           $users3 = mysqli_fetch_all($result3);
-                          $sql4="SELECT * from skills where skillId = 3";
+                          $sql4="SELECT * from skills where id = 3";
                           $result4 = mysqli_query($conn,$sql4);
                           $users4 = mysqli_fetch_all($result4);
-                          $sql5="SELECT * from skills where skillId = 4";
+                          $sql5="SELECT * from skills where id = 4";
                           $result5 = mysqli_query($conn,$sql5);
                           $users5 = mysqli_fetch_all($result5); 
                       ?>
@@ -111,22 +111,22 @@
       </section>
       <!-- ======= Services Section ======= -->
       <?php
-      $sql6="SELECT * from services where serviceId = 1";
+      $sql6="SELECT * from service where  id = 1";
       $result6 = mysqli_query($conn,$sql6);
       $users6 = mysqli_fetch_all($result6);
-      $sql7="SELECT * from services where serviceId = 2";
+      $sql7="SELECT * from service where id = 2";
       $result7 = mysqli_query($conn,$sql7);
       $users7 = mysqli_fetch_all($result7);
-      $sql8="SELECT * from services where serviceId = 3";
+      $sql8="SELECT * from service where id = 3";
       $result8 = mysqli_query($conn,$sql8);
       $users8 = mysqli_fetch_all($result8);
-      $sql9="SELECT * from services where serviceId = 4";
+      $sql9="SELECT * from service where id = 4";
       $result9 = mysqli_query($conn,$sql9);
       $users9 = mysqli_fetch_all($result9);
-      $sql10="SELECT * from services where serviceId = 5";
+      $sql10="SELECT * from service where id = 5";
       $result10 = mysqli_query($conn,$sql10);
       $users10 = mysqli_fetch_all($result10);
-      $sql11="SELECT * from services where serviceId = 6";
+      $sql11="SELECT * from service where id = 6";
       $result11 = mysqli_query($conn,$sql11);
       $users11 = mysqli_fetch_all($result11);
     ?> 
@@ -228,16 +228,16 @@
       </div>
     </section><!-- End Services Section -->
         <?php
-              $sql12="SELECT * from achievement where achievementId = 1";
+              $sql12="SELECT * from achievement where id = 1";
               $result12 = mysqli_query($conn,$sql12);
               $users12 = mysqli_fetch_all($result12);
-              $sql13="SELECT * from achievement where achievementId = 2";
+              $sql13="SELECT * from achievement where id = 2";
               $result13 = mysqli_query($conn,$sql13);
               $users13 = mysqli_fetch_all($result13);
-              $sql14="SELECT * from achievement where achievementId = 3";
+              $sql14="SELECT * from achievement where id = 3";
               $result14 = mysqli_query($conn,$sql14);
               $users14 = mysqli_fetch_all($result14);
-              $sql15="SELECT * from achievement where achievementId = 4";
+              $sql15="SELECT * from achievement where id  = 4";
               $result15 = mysqli_query($conn,$sql15);
               $users15 = mysqli_fetch_all($result15);
         ?>
@@ -294,16 +294,16 @@
     </div><!-- End Counter Section -->
     <section id="resume"  class="services-mf pt-5 route">
             <?php
-              $sql16="SELECT * from history where historyId = 1";
+              $sql16="SELECT * from history where id = 1";
               $result16 = mysqli_query($conn,$sql16);
               $users16 = mysqli_fetch_all($result16);
-              $sql17="SELECT * from history where historyId= 2";
+              $sql17="SELECT * from history where  id= 2";
               $result17 = mysqli_query($conn,$sql17);
               $users17 = mysqli_fetch_all($result17);
-              $sql18="SELECT * from history where historyId = 3";
+              $sql18="SELECT * from history where  id = 3";
               $result18 = mysqli_query($conn,$sql18);
               $users18 = mysqli_fetch_all($result18);
-              $sql19="SELECT * from history where historyId = 4";
+              $sql19="SELECT * from history where  id = 4";
               $result19 = mysqli_query($conn,$sql19);
               $users19 = mysqli_fetch_all($result19);
             ?> 
@@ -378,18 +378,20 @@
             </div>
         <!-- End Services Section -->
         <!--TimeLine-->
+        </section>
+        <section id="resume"  class="services-mf pt-5 route">
         <div class="container">
             <?php
-              $sql20="SELECT * from education_history where educationId = 1";
+              $sql20="SELECT * from education_history where id = 1";
               $result20 = mysqli_query($conn,$sql20);
               $users20 = mysqli_fetch_all($result20);
-              $sql21="SELECT * from education_history where educationId = 2";
+              $sql21="SELECT * from education_history where id = 2";
               $result21 = mysqli_query($conn,$sql21);
               $users21 = mysqli_fetch_all($result21);
-              $sql22="SELECT * from education_history where educationId = 3";
+              $sql22="SELECT * from education_history where id = 3";
               $result22 = mysqli_query($conn,$sql22);
               $users22 = mysqli_fetch_all($result22);
-              $sql23="SELECT * from education_history where educationId = 4";
+              $sql23="SELECT * from education_history where id = 4";
               $result23 = mysqli_query($conn,$sql23);
               $users23 = mysqli_fetch_all($result23);
             ?> 
@@ -408,46 +410,44 @@
             </div>
             <div class="main-timeline">
                 <!-- start experience section-->
-                <div class="row">
-                    <div class="timeline">
-                        <div class="icon"></div>
-                        <div class="date-content">
-                            <div class="date-outer">
-                                <span class="date">
-                                                <span class="month"><?php foreach($users20 as $user20) echo $user20[4]?></span>
-                                <span class="year"><?php foreach($users20 as $user20) echo $user20[3]?></span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="timeline-content">
-                            <h5 class="title"><?php foreach($users20 as $user20) echo $user20[1]?></h5>
-                            <p class="description">
-                            <?php foreach($users20 as $user20) echo $user20[2]?>
-                            </p>
-                        </div>
+              <div class="row">
+                <div class="timeline">
+                  <div class="icon"></div>
+                    <div class="date-content">
+                      <div class="date-outer">
+                        <span class="date">
+                          <span class="month"><?php foreach($users20 as $user20) echo $user20[4]?></span>
+                          <span class="year"><?php foreach($users20 as $user20) echo $user20[2]?></span>
+                        </span>
+                      </div>
                     </div>
+                  <div class="timeline-content">
+                    <h5 class="title"><?php foreach($users20 as $user20) echo $user20[1]?></h5>
+                      <p class="description">
+                        <?php foreach($users20 as $user20) echo $user20[3]?>
+                      </p>
+                  </div>
+                </div>
                     <!-- end experience section-->
-
                     <!-- start experience section-->
                     <div class="timeline">
                         <div class="icon"></div>
                         <div class="date-content">
                             <div class="date-outer">
                                 <span class="date">
-                                                <span class="month"><?php foreach($users21 as $user21) echo $user21[4]?></span>
-                                <span class="year"><?php foreach($users21 as $user21) echo $user21[3]?></span>
+                                <span class="month"><?php foreach($users21 as $user21) echo $user21[4]?></span>
+                                <span class="year"><?php foreach($users21 as $user21) echo $user21[2]?></span>
                                 </span>
                             </div>
                         </div>
                         <div class="timeline-content">
                             <h5 class="title"><?php foreach($users21 as $user21) echo $user21[1]?></h5>
                             <p class="description">
-                            <?php foreach($users21 as $user21) echo $user21[2]?>
+                            <?php foreach($users21 as $user21) echo $user21[3]?>
                             </p>
                         </div>
                     </div>
                     <!-- end experience section-->
-
                     <!-- start experience section-->
                     <div class="timeline">
                         <div class="icon"></div>
@@ -455,14 +455,14 @@
                             <div class="date-outer">
                                 <span class="date">
                                 <span class="month"><?php foreach($users22 as $user22) echo $user22[4]?></span>
-                                <span class="year"><?php foreach($users22 as $user22) echo $user22[3]?></span>
+                                <span class="year"><?php foreach($users22 as $user22) echo $user22[2]?></span>
                                 </span>
                             </div>
                         </div>
                         <div class="timeline-content">
                             <h5 class="title"><?php foreach($users22 as $user22) echo $user22[1]?></span></h5>
                             <p class="description">
-                            <?php foreach($users22 as $user22) echo $user22[2]?></span>
+                            <?php foreach($users22 as $user22) echo $user22[3]?></span>
                             </p>
                         </div>
                     </div>
@@ -475,22 +475,22 @@
                             <div class="date-outer">
                                 <span class="date">
                                 <span class="month"><?php foreach($users23 as $user23) echo $user23[4]?></span>
-                                <span class="year"><?php foreach($users23 as $user23) echo $user23[3]?></span>
+                                <span class="year"><?php foreach($users23 as $user23) echo $user23[2]?></span>
                                 </span>
                             </div>
                         </div>
                         <div class="timeline-content">
                             <h5 class="title"><?php foreach($users23 as $user23) echo $user23[1]?></h5>
                             <p class="description">
-                            <?php foreach($users23 as $user23) echo $user23[2]?>
+                            <?php foreach($users23 as $user23) echo $user23[3]?>
                             </p>
                         </div>
                     </div>
                     <!-- end experience section-->
                 </div>
             </div>
-        </div>
-      </section>
+            </div>
+    </section>
     <!--end timeline-->
       <!-- Team Section -->
       <section id="team">
@@ -498,10 +498,10 @@
         <div class="overlay-mf"></div>
         <div class="container">
             <?php
-              $sql24="SELECT * from teams where teamId = 1";
+              $sql24="SELECT * from team where id = 1";
               $result24 = mysqli_query($conn,$sql24);
               $users24 = mysqli_fetch_all($result24);
-              $sql25="SELECT * from teams where teamId = 2";
+              $sql25="SELECT * from team where id = 2";
               $result25 = mysqli_query($conn,$sql25);
               $users25 = mysqli_fetch_all($result25);
             ?>
@@ -550,24 +550,15 @@
       <!-- Work Section -->
         <section id="work" class="portfolio-mf sect-pt4 route">
         <?php
-              $sql26="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 1";
+              $sql26="SELECT * FROM product WHERE id = 1";
               $result26 = mysqli_query($conn,$sql26);
               $users26 = mysqli_fetch_all($result26);
-              $sql27="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 2";
+              $sql27="SELECT * FROM product WHERE id = 2";
               $result27 = mysqli_query($conn,$sql27);
               $users27 = mysqli_fetch_all($result27);
-              $sql28="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 3";
+              $sql28="SELECT * FROM product WHERE id = 3";
               $result28 = mysqli_query($conn,$sql28);
               $users28 = mysqli_fetch_all($result28);
-              $sql29="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 4";
-              $result29 = mysqli_query($conn,$sql29);
-              $users29 = mysqli_fetch_all($result29);
-              $sql30="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 5";
-              $result30 = mysqli_query($conn,$sql30);
-              $users30 = mysqli_fetch_all($result30);
-              $sql31="SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID = 6";
-              $result31 = mysqli_query($conn,$sql31);
-              $users31 = mysqli_fetch_all($result31);
                ?>
             <div class="container">
                 <div class="row">
@@ -596,7 +587,7 @@
                                     <div class="col-sm-8">
                                         <h2 class="w-title"><?php foreach($users26 as $user26) echo $user26[1]?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users26 as $user26) echo $user26[10]?></span> / 
+                                            <span class="w-ctegory"><?php foreach($users26 as $user26) echo $user26[1]?></span> / 
                                             <span class="w-date"><?php foreach($users26 as $user26) echo $user26[3]?></span>
                                         </div>
                                     </div>
@@ -621,7 +612,7 @@
                                     <div class="col-sm-8">
                                         <h2 class="w-title"><?php foreach($users27 as $user27) echo $user27[1]?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users27 as $user27) echo $user27[10]?></span> /
+                                            <span class="w-ctegory"><?php foreach($users27 as $user27) echo $user27[1]?></span> /
                                              <span class="w-date"><?php foreach($users27 as $user27) echo $user27[3]?></span>
                                         </div>
                                     </div>
@@ -646,7 +637,7 @@
                                     <div class="col-sm-8">
                                         <h2 class="w-title"><?php foreach($users28 as $user28) echo $user28[1]?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users28 as $user28) echo $user28[10]?></span> /
+                                            <span class="w-ctegory"><?php foreach($users28 as $user28) echo $user28[1]?></span> /
                                             <span class="w-date"><?php foreach($users28 as $user28) echo $user28[3]?></span>
                                         </div>
                                     </div>
@@ -659,82 +650,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="resources/img/work-4.jpg" data-gall="portfolioGallery" class="venobox">
-                                <div class="work-img">
-                                    <img src="resources/img/work-4.jpg" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title"><?php foreach($users29 as $user29) echo $user29[1]?></h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users29 as $user29) echo $user29[10]?></span> /
-                                            <span class="w-date"><?php foreach($users29 as $user29) echo $user29[3]?></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user29[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="resources/img/work-5.jpg" data-gall="portfolioGallery" class="venobox">
-                                <div class="work-img">
-                                    <img src="resources/img/work-5.jpg" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title"><?php foreach($users30 as $user30) echo $user30[1]?></h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users30 as $user30) echo $user30[10]?></span> /
-                                            <span class="w-date"><?php foreach($users30 as $user30) echo $user30[3]?></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="work-box">
-                            <a href="resources/img/work-6.jpg" data-gall="portfolioGallery" class="venobox">
-                                <div class="work-img">
-                                    <img src="resources/img/work-6.jpg" alt="" class="img-fluid">
-                                </div>
-                            </a>
-                            <div class="work-content">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <h2 class="w-title"><?php foreach($users31 as $user31) echo $user31[1]?></h2>
-                                        <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users31 as $user31) echo $user31[10]?></span> /
-                                            <span class="w-date"><?php foreach($users31 as $user31) echo $user31[3]?></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user30[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section><!-- End Work Section -->

@@ -1,28 +1,29 @@
-<?php
-    include "database/connect.php";
-    global $conn;
-    $sql = "SELECT * FROM `product`,`product_detail` WHERE product.productId=product_detail.productId";
-    $result = mysqli_query($conn,$sql);
-    $users = mysqli_fetch_all($result);
+<?php 
+      include "database/connect.php";
+      $sql = "select * from product";
+      $result = mysqli_query($conn,$sql);
+      $users = mysqli_fetch_all($result);
     function selectOne($result)
     {
         global $conn;   
-        $sql1 = "select * from `product`,`product_detail` WHERE product.productId=product_detail.productId and pro_detailID =" . $result;
+        $sql1 = "select * from product where id =" . $result;
         $test = mysqli_query($conn, $sql1);
         $a = mysqli_fetch_assoc($test);
         return $a;
     }
     if (isset($_GET['id'])) {
         $a = selectOne($_GET['id']);
-            $id = $a['pro_detailID'];
-            $name = $a['name'];
-            $date = $a['product_date'];
-            $client = $a['client'];
-            $url = $a['project_url'];
-            $content=$a['content'];
-            $title=$a['title']; 
-            $category = $a['category'];
-         }
+        {
+        $id = $a['id'];
+        $name = $a['name'];
+        $time_start = $a['time_start'];
+        $description =$a['description'];
+        $url = $a['url'];
+        $content = $a['content'];
+        $title = $a['title'];
+        $category = $a['category'];
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,8 +114,8 @@
             <h3>Product information</h3>
             <ul>
               <li><strong>Category</strong>: <?php echo $category ?></li>
-              <li><strong>Client</strong>: <?php echo $client ?></li>
-              <li><strong>Project date</strong>: <?php echo $date ?></li>
+              <li><strong>Client</strong>: <?php echo $name ?></li>
+              <li><strong>Project date</strong>: <?php echo $time_start ?></li>
               <li><strong>Project URL</strong>: <a href="#"><?php echo $url ?></a></li>
             </ul>
           </div>
