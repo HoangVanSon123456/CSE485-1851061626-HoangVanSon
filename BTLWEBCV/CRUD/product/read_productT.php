@@ -1,5 +1,5 @@
 <?php 
-      include "/database/connect.php";
+     include "../connect1.php";
       $sql = "select * from product";
       $result = mysqli_query($conn,$sql);
       $users = mysqli_fetch_all($result);
@@ -17,7 +17,7 @@
         $id = $a['id'];
         $name = $a['name'];
         $time_start = $a['time_start'];
-        $description =$a['description'];
+        $client =$a['client'];
         $url = $a['url'];
         $content = $a['content'];
         $title = $a['title'];
@@ -50,8 +50,8 @@
            
         </div>
         <div class="form-group">
-            <label for="inputcontent"><strong>DSescription</strong></label>
-            <input type="client" class="form-control" id="description" name="description" value= "<?php echo $description ?>" disabled ="disabled">
+            <label for="inputcontent"><strong>Client</strong></label>
+            <input type="client" class="form-control" id="description" name="description" value= "<?php echo $client ?>" disabled ="disabled">
            
         </div>
           <div class="form-group">

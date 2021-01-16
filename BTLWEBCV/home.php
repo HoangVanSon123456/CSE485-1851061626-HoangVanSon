@@ -41,15 +41,15 @@
                           //1. Kết nối database
                           include "database/connect.php";
                           //2. Khai báo truy vấn
-                          $sql1="SELECT * from user where id = 1";
+                          $sql1="SELECT * from user where id = 17";
                           $result1 = mysqli_query($conn,$sql1);
                           $users1 = mysqli_fetch_all($result1);
                           
                       ?>
                           <p><span class="title-s">Name: </span><?php foreach($users1 as $user1) echo $user1[1]?><span></span></p>
-                          <p><span class="title-s">Carrer: </span> <span><?php foreach($users1 as $user1) echo $user1[7]?></span></p>
+                          <p><span class="title-s">Carrer: </span> <span><?php foreach($users1 as $user1) echo $user1[10]?></span></p>
                           <p><span class="title-s">Email: </span> <span><?php foreach($users1 as $user1) echo $user1[4]?></span></p>
-                          <p><span class="title-s">Phone: </span> <?php foreach($users1 as $user1) echo $user1[8]?></span></p>
+                          <p><span class="title-s">Phone: </span> <?php foreach($users1 as $user1) echo $user1[6]?></span></p>
                         </div>
                       </div>
                     </div>
@@ -99,7 +99,7 @@
                         </h5>
                       </div>
                       <p class="lead">
-                      <?php foreach($users1 as $user1) echo $user1[9]?>
+                      <?php foreach($users1 as $user1) echo $user1[7]?>
                       </p>
                     </div>
                   </div>
@@ -123,12 +123,6 @@
       $sql9="SELECT * from service where id = 4";
       $result9 = mysqli_query($conn,$sql9);
       $users9 = mysqli_fetch_all($result9);
-      $sql10="SELECT * from service where id = 5";
-      $result10 = mysqli_query($conn,$sql10);
-      $users10 = mysqli_fetch_all($result10);
-      $sql11="SELECT * from service where id = 6";
-      $result11 = mysqli_query($conn,$sql11);
-      $users11 = mysqli_fetch_all($result11);
     ?> 
     <section id="service" class="services-mf pt-5 route">
       <div class="container">
@@ -146,7 +140,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="service-box">
               <div class="service-ico">
                 <span class="ico-circle"><i class="ion-monitor"></i></span>
@@ -159,7 +153,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="service-box">
               <div class="service-ico">
                 <span class="ico-circle"><i class="ion-code-working"></i></span>
@@ -172,7 +166,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="service-box">
               <div class="service-ico">
                 <span class="ico-circle"><i class="fas fa-chart-line"></i></span>
@@ -185,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="service-box">
               <div class="service-ico">
                 <span class="ico-circle"><i class="ion-android-phone-portrait"></i></span>
@@ -194,32 +188,6 @@
                 <h2 class="s-title"><?php foreach($users9 as $user9) echo $user9[1]?></h2>
                 <p class="s-description text-center">
                 <?php foreach($users9 as $user9) echo $user9[2]?>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-paintbrush"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title"><?php foreach($users10 as $user10) echo $user10[1]?></h2>
-                <p class="s-description text-center">
-                <?php foreach($users10 as $user10) echo $user10[2]?>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-stats-bars"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title"><?php foreach($users11 as $user11) echo $user11[1]?></h2>
-                <p class="s-description text-center">
-                <?php foreach($users11 as $user11) echo $user11[2]?>
                 </p>
               </div>
             </div>
@@ -585,15 +553,15 @@
                             <div class="work-content">
                                 <div class="row">
                                     <div class="col-sm-8">
-                                        <h2 class="w-title"><?php foreach($users26 as $user26) echo $user26[1]?></h2>
+                                        <h2 class="w-title"><?php foreach($users26 as $user26) echo $user26[4]?></h2>
                                         <div class="w-more">
-                                            <span class="w-ctegory"><?php foreach($users26 as $user26) echo $user26[1]?></span> / 
+                                            <span class="w-ctegory"><?php foreach($users26 as $user26) echo $user26[5]?></span> / 
                                             <span class="w-date"><?php foreach($users26 as $user26) echo $user26[3]?></span>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                         <?php echo "<a href='product_details.php?id=".$user26[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                         <?php echo "<a href='product_details.php?id=".$user26[0]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -618,7 +586,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user27[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='product_details.php?id=".$user27[0]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -643,7 +611,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="w-like">
-                                        <?php echo "<a href='product_details.php?id=".$user28[5]."'><span class='ion-ios-plus-outline'></span></a>"?>
+                                        <?php echo "<a href='product_details.php?id=".$user28[0]."'><span class='ion-ios-plus-outline'></span></a>"?>
                                         </div>
                                     </div>
                                 </div>
@@ -711,11 +679,11 @@
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                      <?php foreach($users1 as $user1) echo $user1[10]?>
+                      <?php foreach($users1 as $user1) echo $user1[11]?>
                       </p>
                       <ul class="list-ico">
-                        <li><span class="ion-ios-location"></span> <?php foreach($users1 as $user1) echo $user1[3]?></li>
-                        <li><span class="ion-ios-telephone"></span> <?php foreach($users1 as $user1) echo $user1[8]?></li>
+                        <li><span class="ion-ios-location"></span> <?php foreach($users1 as $user1) echo $user1[9]?></li>
+                        <li><span class="ion-ios-telephone"></span> <?php foreach($users1 as $user1) echo $user1[6]?></li>
                         <li><span class="ion-email"></span> <?php foreach($users1 as $user1) echo $user1[4]?></li>
                       </ul>
                     </div>

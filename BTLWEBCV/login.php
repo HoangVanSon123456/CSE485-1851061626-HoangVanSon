@@ -67,7 +67,7 @@ session_start();
     <div class="w3layoutscontaineragileits">
         <h2>Login here</h2>
         <form action="login.php" method="post">
-            <input type="text" name="username" placeholder="EMAIL" required="">
+            <input type="text" name="username" placeholder="USERNAME" required="">
             <input type="password" name="password" placeholder="PASSWORD" required="">
             <div class="aitssendbuttonw3ls">
                 <input type="submit" name="btn_submit" value="LOGIN">

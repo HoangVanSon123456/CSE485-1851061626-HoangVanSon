@@ -17,11 +17,11 @@
         $id = $a['id'];
         $name = $a['name'];
         $time_start = $a['time_start'];
-        $description =$a['description'];
+        $content =$a['content'];
         $url = $a['url'];
-        $content = $a['content'];
         $title = $a['title'];
         $category = $a['category'];
+        $client = $a['client'];
         }
     }
 ?>
@@ -114,7 +114,7 @@
             <h3>Product information</h3>
             <ul>
               <li><strong>Category</strong>: <?php echo $category ?></li>
-              <li><strong>Client</strong>: <?php echo $name ?></li>
+              <li><strong>Client</strong>: <?php echo $client ?></li>
               <li><strong>Project date</strong>: <?php echo $time_start ?></li>
               <li><strong>Project URL</strong>: <a href="#"><?php echo $url ?></a></li>
             </ul>

@@ -62,7 +62,7 @@
         <h1 style="color: #448aff;text-align: center;">Product</h1>
         <?php
         require_once "../database/connect.php";
-        $sql = "SELECT id,name,time_start,description FROM product";
+        $sql = "SELECT id,name,time_start,content FROM product";
          if($result = mysqli_query($conn, $sql)){
             if(mysqli_num_rows($result) > 0){
             echo "<table class='table table-striped'>";
@@ -74,7 +74,7 @@
                         echo "<th>#</th>";
                         echo "<th>Name</th>";
                         echo "<th>Time Start</th>";
-                        echo "<th>Description</th>";
+                        echo "<th>Content</th>";
                         echo "<th>Settings</th>";
                     echo "</tr>";
                 echo "</thead>"; 
@@ -84,7 +84,7 @@
                         echo "<td>". $row['id'] ."</td>";
                         echo "<td>". $row['name'] ."</td>";
                         echo "<td>". $row['time_start'] ."</td>";
-                        echo "<td>". $row['description'] ."</td>";
+                        echo "<td>". $row['content'] ."</td>";
                         echo "<td>";
                             echo "<a class='btn btn-danger edit' href='/CV_Project/CRUD/product/delete_productT.php?id=".$row['id']."' aria-label='Settings'>
                                <i class='fa fa-trash' aria-hidden='true '></i></a>";

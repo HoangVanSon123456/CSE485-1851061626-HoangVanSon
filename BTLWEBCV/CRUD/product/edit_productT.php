@@ -25,7 +25,7 @@
         $id = $a['id'];
         $name = $a['name'];
         $time_start = $a['time_start'];
-        $description =$a['description'];
+        $client =$a['client'];
         $url = $a['url'];
         $content = $a['content'];
         $title = $a['title'];
@@ -36,7 +36,7 @@
         $i = $_POST['id'];
         $name = $_POST['name'];
         $time_start = $_POST['time_start'];
-        $description =$_POST['description'];
+        $client =$_POST['client'];
         $url = $_POST['url'];
         $content = $_POST['content'];
         $title = $_POST['title'];
@@ -44,7 +44,7 @@
         $sql3 = "update product set 
         name='$name', 
         time_start='$time_start',
-        description='$description',
+        client='$client',
         url='$url',
         content='$content',
         title='$title',
@@ -79,8 +79,8 @@
            
         </div>
         <div class="form-group">
-            <label for="inputcontent"><strong>Description</strong></label>
-            <input type="description" class="form-control" id="description" name="description" value= "<?php echo $description ?>">
+            <label for="inputcontent"><strong>Client</strong></label>
+            <input type="client" class="form-control" id="description" name="client" value= "<?php echo $client ?>">
         </div>
           <div class="form-group">
             <label for="inputyear"><strong>Url</strong></label>
