@@ -498,7 +498,7 @@
                 </div>
                 <div class="testimonial-box">
                     <div class="author-test">
-                    <img src="../resources/img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a"></a>
+                    <img src="../resources/img/b.jpg" alt="" class="rounded-circle b-shadow-a"></a>
                     <span class="author"><?php foreach($users25 as $user25) echo $user25[1]?></span>
                     </div>
                     <div class="content-test">
